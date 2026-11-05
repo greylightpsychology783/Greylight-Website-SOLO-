@@ -59,7 +59,7 @@
 					<h1>Warm, evidence-based therapy for lasting change.</h1>
 					<p>
 						I'm Jake, a clinical psychologist offering warm, evidence-informed therapy tailored to your
-						goals. Genuine connection, informed care, and therapy that creates lasting change, delivered
+						goals. Genuine connection, informed care, and therapy that supports lasting change, delivered
 						with insight, courage and growth at its core.
 					</p>
 				</div>

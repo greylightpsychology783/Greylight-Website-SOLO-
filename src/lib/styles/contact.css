@@ -1,0 +1,18 @@
+/* contact page — scoped */
+.pg-contact .field { display:grid;gap:var(--space-2) }
+.pg-contact .field-label { font-size:var(--font-size-200);font-weight:var(--font-weight-semibold);color:var(--color-brand-ink) }
+.pg-contact .field-meta { font-size:var(--font-size-200);color:var(--color-text-muted) }
+.pg-contact .field-error { margin:0;font-size:var(--font-size-200);color:var(--color-danger) }
+.pg-contact .field { display:grid;gap:var(--space-2) }
+.pg-contact .field-label { font-size:var(--font-size-200);font-weight:var(--font-weight-semibold);color:var(--color-brand-ink) }
+.pg-contact .field-meta { font-size:var(--font-size-200);color:var(--color-text-muted) }
+.pg-contact .field-error { margin:0;font-size:var(--font-size-200);color:var(--color-danger) }
+.pg-contact .contact-page { background:linear-gradient(180deg,var(--color-section-light) 0%,color-mix(in oklab,var(--color-section-light),white 55%) 100%) }
+.pg-contact .meta-row { display:flex;align-items:center;gap:var(--space-3) }
+.pg-contact .form,.pg-contact .success-card { padding:var(--space-6) }
+.pg-contact .success-card h2 { margin:var(--space-3) 0 0;font-size:clamp(var(--font-size-600),3vw,var(--font-size-700)) }
+.pg-contact .form-alert { padding:var(--space-3);border:1px solid;border-radius:var(--radius-md);font-size:var(--font-size-200) }
+.pg-contact .form-alert.error { border-color:color-mix(in oklab,var(--color-warning),white 55%);background:color-mix(in oklab,var(--color-warning),white 92%);color:var(--color-brand-ink) }
+.pg-contact .notice { max-width:38rem;padding:var(--space-4);border-color:color-mix(in oklab,var(--color-warning),white 70%);background:color-mix(in oklab,var(--color-warning),white 94%);--flow-space: var(--space-3);margin-top:var(--space-6) }
+.pg-contact .notice h2 { font-size:var(--step-1) }
+.pg-contact .notice p { font-size:var(--step--1) }

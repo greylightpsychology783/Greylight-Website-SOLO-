@@ -1,0 +1,22 @@
+/* service page — scoped */
+.pg-service .availability { display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-2) }
+.pg-service .status-tag { display:inline-flex;align-items:center;padding:var(--space-1) var(--space-3);border-radius:var(--radius-pill);font-size:var(--font-size-200);font-weight:var(--font-weight-medium);color:var(--color-text-muted);background:var(--color-surface-strong);border:1px solid var(--color-border) }
+.pg-service .status-tag.active { color:var(--color-brand-ink);background:var(--color-white);border-color:color-mix(in oklab,var(--color-brand-ink),transparent 78%) }
+.pg-service .concerns-section { padding-block:0 }
+.pg-service .concerns { list-style:none;margin:0;padding:0 }
+.pg-service .concern { max-width:none;display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(var(--space-4),2vw,var(--space-8));padding-block:clamp(var(--space-8),10vw,var(--space-20));border-bottom:1px solid color-mix(in oklab,var(--color-brand-ink),transparent 82%);scroll-margin-top:calc(var(--nav-height) + 4rem);width:100% }
+.pg-service .concern-head { display:flex;align-items:baseline;flex-direction:column;gap:var(--space-4);max-width:24rem }
+.pg-service .concern-title { margin:0;font-size:clamp(var(--font-size-600),2vw,var(--font-size-800));line-height:1.15;letter-spacing:var(--tracking-tight) }
+.pg-service .concern-body { min-width:0 }
+.pg-service .concern-lede { font-size:var(--font-size-400);color:var(--color-text) }
+.pg-service .concern-text-cta { display:inline-flex;align-items:center;gap:var(--space-2);width:fit-content;margin:0;padding:0;font:inherit;font-size:var(--font-size-300);font-weight:var(--font-weight-medium);line-height:inherit;letter-spacing:inherit;text-align:start;color:var(--color-primary);text-decoration:none;background:none;border:none;cursor:pointer;transition:color var(--duration-fast) var(--ease-standard) }
+.pg-service .concern-text-cta:hover { color:var(--color-primary-hover) }
+.pg-service .concern-text-cta:focus-visible { outline:3px solid color-mix(in oklab,var(--color-focus-ring),white 38%);outline-offset:2px;border-radius:var(--radius-sm) }
+.pg-service .key-points { display:grid;gap:var(--space-2);padding-left:0;list-style:none }
+.pg-service .key-points li { position:relative;padding-left:var(--space-6);max-width:none }
+.pg-service .key-points li:before { content:"";position:absolute;left:.15rem;top:.62em;width:.4rem;height:.4rem;border-radius:50%;background:var(--color-primary) }
+.pg-service .actions { display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:clamp(var(--space-10),5vw,var(--space-16)) }
+@media(min-width:52rem) {
+  .pg-service .concern { grid-template-columns:minmax(14rem,1fr) minmax(0,2fr);gap:clamp(var(--space-6),4vw,var(--space-12));align-items:start }
+  .pg-service .concern-head { position:sticky;top:calc(var(--nav-height) + 5rem);align-self:start }
+}

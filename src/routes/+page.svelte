@@ -151,7 +151,7 @@
 			<div class="why-copy why-copy--full">
 				<div class="why-intro flow" style="--flow-space: var(--space-4);">
 					<p class="eyebrow">Why Greylight</p>
-					<h2 class="headline">Compassionate, evidence-based therapy that creates real change.</h2>
+					<h2 class="headline">Compassionate, evidence-based therapy that supports lasting change.</h2>
 				</div>
 				<ul class="pillars pillars--row">
 					<li class="pillar">

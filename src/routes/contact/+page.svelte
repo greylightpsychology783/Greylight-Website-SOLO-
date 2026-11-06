@@ -13,7 +13,7 @@
 
 <Seo
 	title="Contact"
-	description="Book a free 15-minute connection call with Greylight Psychology. Telehealth and in-person sessions available Australia-wide."
+	description="Send an enquiry to Greylight Psychology about fees, rebates or availability, or book a free 15-minute connection call. Telehealth and in-person sessions available Australia-wide."
 />
 
 <div class="pg-contact">
@@ -23,10 +23,11 @@
 				<div class="layout-sidebar-form">
 					<div class="flow" style="--flow-space: var(--space-5);">
 						<p class="eyebrow">Contact</p>
-						<h1 class="text-wrap-balance">Book a free 15-minute connection call.</h1>
+						<h1 class="text-wrap-balance">Send an enquiry.</h1>
 						<p>
-							Share your goals and preferred appointment type. We will discuss suitable next steps and
-							answer practical questions about sessions, fees and rebates.
+							Have a question about fees, rebates, availability or whether I'm the right fit? Send me a
+							message and I'll reply by email. Prefer to talk it through?
+							<a href={site.bookingLink}>Book a free 15-minute connection call</a> instead.
 						</p>
 						<div class="meta flow" style="--flow-space: var(--space-3);">
 							<div class="meta-row"><Icon name="mail" size={20} /> <a href="mailto:{site.email}">{site.email}</a></div>
@@ -47,7 +48,7 @@
 						<div class="surface-card success-card flow" role="status">
 							<p class="eyebrow">Enquiry sent</p>
 							<h2>Thanks, your enquiry is on its way.</h2>
-							<p>We'll be in touch within 48 hours to arrange your free connection call.</p>
+							<p>I'll reply by email within 48 hours.</p>
 						</div>
 					{:else}
 						<form
@@ -80,7 +81,7 @@
 								{#if errors.email}<p class="field-error" id="email-error">{errors.email}</p>{/if}
 							</div>
 							<div class="field">
-								<label for="message" class="field-label">Anything we should know before the call?</label>
+								<label for="message" class="field-label">How can I help?</label>
 								<textarea id="message" name="message" placeholder="" required rows="5" aria-invalid={!!errors.message} aria-describedby="message-meta{errors.message ? ' message-error' : ''}">{values.message}</textarea>
 								<p class="field-meta" id="message-meta">Avoid including urgent safety concerns in this form.</p>
 								{#if errors.message}<p class="field-error" id="message-error">{errors.message}</p>{/if}

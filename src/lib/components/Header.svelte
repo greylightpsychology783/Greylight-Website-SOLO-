@@ -52,10 +52,9 @@
 				{/each}
 			</ul>
 			<div class="nav-actions">
-				<span class="nav-refer-action"
-					><a class="btn light-blue sm" href={site.referralForm}>Refer</a></span
-				>
+				<span class="nav-enquire-action"><a class="btn secondary sm" href="/contact">Enquire</a></span>
 				<a class="btn primary sm" href={site.bookingLink}>Book a Call</a>
+				<span class="nav-refer-action"><a class="btn light-blue sm" href={site.referralForm}>Refer</a></span>
 				<button
 					type="button"
 					class="nav-menu-toggle"
@@ -96,6 +95,7 @@
 				</ul>
 				<div class="mobile-nav-main-footer">
 					<a class="btn primary md" href={site.bookingLink}>Book a free connection call</a>
+					<a class="btn secondary md" href="/contact">Send an enquiry</a>
 					<a class="btn light-blue md" href={site.referralForm}>GP &amp; health professional referral</a>
 				</div>
 			</div>

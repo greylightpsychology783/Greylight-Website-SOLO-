@@ -16,7 +16,7 @@ export const actions: Actions = {
 		if (!name) errors.name = 'Please enter your name.';
 		if (!email) errors.email = 'Please enter your email address.';
 		else if (!EMAIL_RE.test(email)) errors.email = 'Please enter a valid email address.';
-		if (!message) errors.message = 'Please add a short note before the call.';
+		if (!message) errors.message = 'Please add a short message.';
 		if (name.length > 200 || email.length > 320 || message.length > 5000)
 			errors.message = 'Your message is a little long. Please shorten it and try again.';
 		if (Object.keys(errors).length) return fail(400, { values, errors });

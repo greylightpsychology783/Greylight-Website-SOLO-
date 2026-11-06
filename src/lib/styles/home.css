@@ -41,7 +41,7 @@
 .statement .clusters { list-style:none;margin:0;padding:0;border-top:1px solid color-mix(in oklab,var(--color-brand-ink),transparent 78%) }
 .statement .clusters li { max-width:none;display:flex;align-items:baseline;justify-content:space-between;gap:clamp(var(--space-6),4vw,var(--space-12));padding-block:clamp(var(--space-6),2vw,var(--space-10));border-bottom:1px solid color-mix(in oklab,var(--color-brand-ink),transparent 78%) }
 .statement .break-end { margin-top:clamp(var(--space-10),5vw,var(--space-16)) }
-.statement .break-line { font-family:var(--font-family-heading);font-size:clamp(var(--font-size-500),2.4vw,var(--font-size-800));font-weight:var(--font-weight-regular);line-height:1.15;letter-spacing:var(--tracking-tight);color:color-mix(in oklab,var(--color-brand-ink),transparent 10%);margin:0;max-width:28ch;text-wrap:pretty }
+.statement .break-line { font-family:var(--font-family-heading);font-size:clamp(var(--font-size-500),2.4vw,var(--font-size-800));font-weight:var(--font-weight-regular);line-height:1.15;letter-spacing:var(--tracking-tight);color:color-mix(in oklab,var(--color-brand-ink),transparent 10%);margin:0;max-width:none;text-wrap:pretty }
 .statement .break-cta { margin-top:1.5rem }
 .statement .theme-group { display:flex;align-items:baseline;gap:clamp(var(--space-3),1.2vw,var(--space-5));flex-shrink:0 }
 .statement .theme { font-family:var(--font-family-heading);font-size:clamp(var(--font-size-500),2vw,var(--font-size-700));font-weight:var(--font-weight-regular);line-height:1.2 }

@@ -4,7 +4,7 @@
 	import Mark from '#lib/components/Mark.svelte';
 	import Typewriter from '#lib/components/Typewriter.svelte';
 	import Accordion from '#lib/components/Accordion.svelte';
-	import { clusters, clusterGroups, clusterHref, getCluster } from '#lib/data/services.ts';
+	import { clusters, clusterHref, getCluster } from '#lib/data/services.ts';
 	import { fees, site } from '#lib/data/site.ts';
 	import '#lib/styles/home.css';
 
@@ -97,21 +97,18 @@
 <section class="statement" aria-label="How I help">
 	<div class="container container-lg">
 		<h2 class="headline">{headline}</h2>
-		{#each clusterGroups as group (group.id)}
-			<div class="cluster-group">
-				<h3 class="group-label">{group.label}</h3>
-				<ul class="clusters">
-					{#each clusters.filter((c) => c.group === group.id) as c (c.slug)}
-						<li>
-							<div class="theme-group"><Mark shape={c.shape} tone={c.tone} /> <span class="theme">{c.title}</span></div>
-							<p class="tags">
-								{#each c.concerns as concern (concern.id)}<a class="tag-link" href={clusterHref(c, concern.id)}>{concern.title}</a>{/each}
-							</p>
-						</li>
-					{/each}
-				</ul>
-			</div>
-		{/each}
+		<div class="cluster-group">
+			<ul class="clusters">
+				{#each clusters as c (c.slug)}
+					<li>
+						<div class="theme-group"><Mark shape={c.shape} tone={c.tone} /> <span class="theme">{c.title}</span></div>
+						<p class="tags">
+							{#each c.concerns as concern (concern.id)}<a class="tag-link" href={clusterHref(c, concern.id)}>{concern.title}</a>{/each}
+						</p>
+					</li>
+				{/each}
+			</ul>
+		</div>
 		<a class="see-all" href="/how-i-help">See all I help with <span class="arrow" aria-hidden="true">→</span></a>
 		<div class="break-end">
 			<p class="break-line">Finding the right fit matters. Let's start with a quick, free chat.</p>

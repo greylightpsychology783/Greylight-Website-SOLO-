@@ -71,7 +71,7 @@
 						{#each heroTags as t (t.href)}<a class="tag-btn" href={t.href}>{t.label}</a>{/each}
 						<a class="show-more-btn" href="/how-i-help">+{totalConcerns - heroTags.length} more</a>
 					</div>
-					<a class="hero-finder-cta" href="/contact"><span>Book a free connection call</span> <Icon name="arrow" /></a>
+					<a class="hero-finder-cta" href={site.bookingLink}><span>Book a free connection call</span> <Icon name="arrow" /></a>
 				</div>
 			</div>
 			<div class="hero-bento">
@@ -115,7 +115,7 @@
 				<div class="break-row">
 					<div class="break-copy">
 						<p class="break-line">Finding the right fit matters. Let's start with a quick, free chat.</p>
-						<div class="break-cta"><a class="btn primary md" href="/contact">Book a connection call</a></div>
+						<div class="break-cta"><a class="btn primary md" href={site.bookingLink}>Book a connection call</a></div>
 					</div>
 					<div class="break-image" role="img" aria-label="A therapy session in a warm, plant-filled room"></div>
 				</div>
@@ -146,7 +146,7 @@
 				</ul>
 				<div class="meet-actions">
 					<a class="btn primary md" href="/about">Meet Jake <Icon name="arrow" /></a>
-					<a class="btn secondary md" href="/contact">Book a free call</a>
+					<a class="btn secondary md" href={site.bookingLink}>Book a free call</a>
 				</div>
 			</div>
 		</div>
@@ -185,7 +185,7 @@
 					</li>
 				</ul>
 				<div class="why-actions">
-					<a class="btn primary md" href="/contact">Book a free call <Icon name="arrow" /></a>
+					<a class="btn primary md" href={site.bookingLink}>Book a free call <Icon name="arrow" /></a>
 					<a class="btn secondary md" href="/about">About me</a>
 				</div>
 			</div>
@@ -204,7 +204,7 @@
 					lasting progress.
 				</p>
 				<div class="process-actions">
-					<a class="btn primary md" href="/contact">Book a free call <Icon name="arrow" /></a>
+					<a class="btn primary md" href={site.bookingLink}>Book a free call <Icon name="arrow" /></a>
 					<a class="btn secondary md" href="/fees">Fees &amp; rebates</a>
 				</div>
 			</div>
@@ -262,7 +262,7 @@
 				</Accordion>
 				<Accordion question="How do I book an appointment?">
 					<p>
-						To book, <a href="/contact">submit an enquiry form</a> or email
+						To book, <a href={site.bookingLink}>choose a time for a free 15-minute connection call</a>, <a href="/contact">submit an enquiry form</a> or email
 						<a href="mailto:{site.email}">{site.email}</a>.
 					</p>
 					<p>

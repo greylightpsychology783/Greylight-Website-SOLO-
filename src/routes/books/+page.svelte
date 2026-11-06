@@ -2,6 +2,7 @@
 	import Seo from '#lib/components/Seo.svelte';
 	import Icon from '#lib/components/Icon.svelte';
 	import { books } from '#lib/data/books.ts';
+	import { site } from '#lib/data/site.ts';
 	import '#lib/styles/books.css';
 </script>
 
@@ -24,7 +25,7 @@
 					</p>
 					<div class="hero-support flow" style="--flow-space: var(--space-3);">
 						<p>Seeking one-on-one support?</p>
-						<a class="btn primary md" href="/contact">Book a free connection call</a>
+						<a class="btn primary md" href={site.bookingLink}>Book a free connection call</a>
 					</div>
 				</div>
 				<div class="hero-note flow" style="--flow-space: var(--space-3);">

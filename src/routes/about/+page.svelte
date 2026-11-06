@@ -95,7 +95,7 @@
 							</ul>
 						</div>
 						<div class="hero-actions">
-							<a class="btn primary md" href="/contact">Book a free connection call</a>
+							<a class="btn primary md" href={site.bookingLink}>Book a free connection call</a>
 							<a class="btn secondary md" href="/fees">Fees &amp; availability</a>
 						</div>
 					</div>
@@ -247,7 +247,7 @@
 					</p>
 				</div>
 				<div class="cta-actions">
-					<a class="btn primary md" href="/contact">Book a free call</a>
+					<a class="btn primary md" href={site.bookingLink}>Book a free call</a>
 					<a class="btn secondary md" href="mailto:{site.email}">Ask a question</a>
 				</div>
 			</div>
@@ -255,7 +255,7 @@
 	</section>
 
 	<div class="mobile-sticky-book">
-		<a class="btn primary md" href="/contact">Book a free connection call</a>
+		<a class="btn primary md" href={site.bookingLink}>Book a free connection call</a>
 	</div>
 </div>
 

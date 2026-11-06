@@ -4,6 +4,7 @@
 	import Icon from '#lib/components/Icon.svelte';
 	import { stuck } from '#lib/components/stuck.ts';
 	import { clusters, clusterHref } from '#lib/data/services.ts';
+	import { site } from '#lib/data/site.ts';
 	import '#lib/styles/services.css';
 </script>
 
@@ -23,7 +24,7 @@
 					fits. Sessions are available in person in Melbourne or via telehealth anywhere in Australia.
 				</p>
 				<div class="hero-actions">
-					<a class="btn primary md" href="/contact">Book a free call <Icon name="arrow" /></a>
+					<a class="btn primary md" href={site.bookingLink}>Book a free call <Icon name="arrow" /></a>
 					<a class="btn secondary md" href="/fees">Fees &amp; availability</a>
 				</div>
 			</div>
@@ -63,7 +64,7 @@
 						</p>
 						<div class="feature-actions">
 							<a class="btn primary md" href={clusterHref(c)}>Explore {c.label.toLowerCase()} support <Icon name="arrow" /></a>
-							<a class="btn secondary md" href="/contact">Get started</a>
+							<a class="btn secondary md" href={site.bookingLink}>Get started</a>
 						</div>
 					</div>
 				</article>

@@ -5,6 +5,9 @@ export const site = {
 	instagram: 'https://www.instagram.com/greylight_psychology/',
 	instagramHandle: '@Greylight_Psychology',
 	referralForm: '/health-professional-referral',
+	/** Halaxy online booking for the free 15-minute connection call (Tue–Fri 9–10am slots). */
+	bookingLink:
+		'https://www.halaxy.com/book/psychologist/mr-jake-ciminelli/1723677/1321489?appointmentTypeId=613831',
 	locations: ['Camberwell', 'Richmond', 'Malvern']
 } as const;
 

@@ -10,7 +10,7 @@
 			<div class="footer-brand">
 				<a class="footer-logo-link" href="/" aria-label="Greylight Psychology home"><span class="footer-logo" aria-hidden="true"></span></a>
 				<h2 class="footer-cta-title">Start with a free <br /> 15-minute connection call.</h2>
-				<a class="btn primary sm" href="/contact"
+				<a class="btn primary sm" href={site.bookingLink}
 					>Book a call <svg class="right-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a
 				>
 				<a class="footer-email" href="mailto:{site.email}">{site.email}</a>

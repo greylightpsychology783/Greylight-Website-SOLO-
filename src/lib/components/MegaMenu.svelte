@@ -2,6 +2,7 @@
 	import { clusters, clusterGroups, clusterHref } from '#lib/data/services.ts';
 	import Mark from './Mark.svelte';
 	import Icon from './Icon.svelte';
+	import { site } from '#lib/data/site.ts';
 	let { idPrefix = 'mega' }: { idPrefix?: string } = $props();
 </script>
 
@@ -39,7 +40,7 @@
 	<div class="mega-cta" aria-label="Get started">
 		<p class="mega-cta-hint">Not sure where to start? Book a free 15-minute connection call and we can talk it through.</p>
 		<div class="mega-cta-actions">
-			<a class="btn primary sm" href="/contact">Book a free call <Icon name="arrow" /></a>
+			<a class="btn primary sm" href={site.bookingLink}>Book a free call <Icon name="arrow" /></a>
 		</div>
 	</div>
 </div>

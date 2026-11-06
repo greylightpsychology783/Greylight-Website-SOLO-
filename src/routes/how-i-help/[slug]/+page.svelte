@@ -3,6 +3,7 @@
 	import Mark from '#lib/components/Mark.svelte';
 	import Icon from '#lib/components/Icon.svelte';
 	import { stuck } from '#lib/components/stuck.ts';
+	import { site } from '#lib/data/site.ts';
 	import '#lib/styles/service.css';
 
 	let { data } = $props();
@@ -20,7 +21,7 @@
 				<h1>{c.title}</h1>
 				<p>{c.intro}</p>
 				<div class="hero-actions">
-					<a class="btn primary md" href="/contact">Book a free call <Icon name="arrow" /></a>
+					<a class="btn primary md" href={site.bookingLink}>Book a free call <Icon name="arrow" /></a>
 					<a class="btn secondary md" href="/how-i-help">All areas</a>
 				</div>
 			</div>
@@ -43,7 +44,7 @@
 						<div class="concern-head">
 							<h2 class="concern-title">{concern.title}</h2>
 							<p class="concern-lede">{concern.lede}</p>
-							<a class="concern-text-cta" href="/contact">Help me with {concern.title} <Icon name="arrow" /></a>
+							<a class="concern-text-cta" href={site.bookingLink}>Help me with {concern.title} <Icon name="arrow" /></a>
 						</div>
 						<div class="concern-body flow" style="--flow-space: var(--space-4);">
 							<p>{concern.body}</p>
@@ -55,7 +56,7 @@
 				{/each}
 			</ul>
 			<div class="actions">
-				<a class="btn primary md" href="/contact">Book a free connection call <Icon name="arrow" /></a>
+				<a class="btn primary md" href={site.bookingLink}>Book a free connection call <Icon name="arrow" /></a>
 				<a class="btn secondary md" href="/fees">Fees &amp; rebates</a>
 			</div>
 		</div>

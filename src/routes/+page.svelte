@@ -97,7 +97,7 @@
 <section class="statement" aria-label="How I help">
 	<div class="container container-lg">
 		<h2 class="headline">{headline}</h2>
-		{#each clusterGroups as group, gi (group.id)}
+		{#each clusterGroups as group (group.id)}
 			<div class="cluster-group">
 				<h3 class="group-label">{group.label}</h3>
 				<ul class="clusters">
@@ -111,17 +111,12 @@
 					{/each}
 				</ul>
 			</div>
-			{#if gi === 0}
-				<div class="break-row">
-					<div class="break-copy">
-						<p class="break-line">Finding the right fit matters. Let's start with a quick, free chat.</p>
-						<div class="break-cta"><a class="btn primary md" href={site.bookingLink}>Book a connection call</a></div>
-					</div>
-					<div class="break-image" role="img" aria-label="A therapy session in a warm, plant-filled room"></div>
-				</div>
-			{/if}
 		{/each}
 		<a class="see-all" href="/how-i-help">See all I help with <span class="arrow" aria-hidden="true">→</span></a>
+		<div class="break-end">
+			<p class="break-line">Finding the right fit matters. Let's start with a quick, free chat.</p>
+			<div class="break-cta"><a class="btn primary md" href={site.bookingLink}>Book a connection call</a></div>
+		</div>
 	</div>
 </section>
 

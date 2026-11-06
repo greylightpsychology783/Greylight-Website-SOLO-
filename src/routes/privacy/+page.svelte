@@ -86,6 +86,7 @@
 							<li>medical, psychological and family history, and other health information you share with me</li>
 							<li>session notes, assessments, outcome measures, treatment plans and correspondence</li>
 							<li>reports and referrals from other health professionals</li>
+							<li>appointment and booking history, including free connection calls booked online</li>
 							<li>billing and payment records</li>
 							<li>session audio, transcripts and draft notes, where you consent to a session being recorded (see section 6)</li>
 							<li>reflections, completed tasks and questionnaire responses (such as the K10, DASS-21, PHQ-9 or GAD-7) that you submit through the client app or secure assessment links</li>
@@ -112,6 +113,7 @@
 						<p>Where possible, I collect information directly from you, for example when you:</p>
 						<ul class="bullet-list">
 							<li>contact me by phone, email or through this website</li>
+							<li>book an appointment or a free connection call online through Halaxy</li>
 							<li>complete intake, consent or assessment forms</li>
 							<li>attend sessions in person or by telehealth</li>
 							<li>use the InterSession client app or complete an assessment through a secure link</li>
@@ -130,6 +132,7 @@
 						<ul class="bullet-list">
 							<li>assess your needs and provide psychological services</li>
 							<li>keep accurate and complete clinical records</li>
+							<li>manage bookings and send appointment confirmations and reminders</li>
 							<li>communicate with you about appointments, fees and your care</li>
 							<li>process Medicare rebates and invoices, and manage WorkSafe, TAC or insurer claims</li>
 							<li>communicate with your referrer and other treating practitioners, with your consent</li>
@@ -140,9 +143,24 @@
 
 					<section id="software">
 						<h2>6. Practice software, session recordings and AI</h2>
+						<h3>Practice management (Halaxy)</h3>
+						<p>
+							I use <strong>Halaxy</strong> (Halaxy Pty Ltd), an Australian practice management system, to keep your
+							client record and to manage appointments and online bookings, confirmations and reminders,
+							invoices and payments, and claims to Medicare, health funds, WorkSafe and the TAC.
+						</p>
+						<ul class="bullet-list">
+							<li>Halaxy stores its data in Australia, encrypted at rest and in transit, with daily backups.</li>
+							<li>Card details are held by Halaxy's payment partners, not by Halaxy or by me.</li>
+							<li>
+								Halaxy may use de-identified, aggregated data (which does not identify you) to analyse and improve
+								its services. Halaxy states that it never sells identifiable personal information.
+							</li>
+						</ul>
+						<h3>Clinical notes and between-session support (InterSession)</h3>
 						<p>
 							I use <strong>InterSession</strong> (InterSession Group Pty Ltd), an Australian practice platform built
-							for mental health professionals, to keep clinical records, draft session notes and documents, send
+							for mental health professionals, to keep clinical notes, draft session notes and documents, send
 							questionnaires, and share between-session materials with you through its client app.
 						</p>
 						<h3>Session recordings</h3>
@@ -207,8 +225,10 @@
 					<section id="overseas">
 						<h2>8. Overseas disclosure</h2>
 						<p>
-							Your clinical records are stored in Australia, on InterSession's servers in Sydney. Some of my
-							service providers process information outside Australia, mainly in the <strong>United States</strong>:
+							Your records are stored in Australia: your client, appointment and billing records in Halaxy, and
+							your clinical notes on InterSession's servers in Sydney. Halaxy only sends information overseas
+							through integrations I choose to connect, such as accounting software. Some of my other service
+							providers process information outside Australia, mainly in the <strong>United States</strong>:
 						</p>
 						<ul class="bullet-list">
 							<li>
@@ -237,7 +257,8 @@
 						<h2>9. Storage and security</h2>
 						<p>I take reasonable steps to protect your information from misuse, interference, loss, and unauthorised access, modification or disclosure, including:</p>
 						<ul class="bullet-list">
-							<li>storing electronic records in InterSession, on Australian servers, encrypted at rest (AES-256) and in transit (TLS 1.3)</li>
+							<li>storing client, appointment and billing records in Halaxy, on Australian servers, encrypted and backed up daily</li>
+							<li>storing clinical notes in InterSession, on Australian servers, encrypted at rest (AES-256) and in transit (TLS 1.3)</li>
 							<li>not keeping session audio once it has been transcribed</li>
 							<li>using an encrypted telehealth platform</li>
 							<li>keeping any paper records in a locked filing cabinet</li>

@@ -327,6 +327,25 @@
 							receive anything you type into the website's forms, and nothing from your clinical records.
 						</p>
 						<p>
+							I have set the pixel up to share as little as possible:
+						</p>
+						<ul class="bullet-list">
+							<li>
+								Meta's "automatic advanced matching" is turned off, so your name, email address or phone number are
+								not collected from forms or sent to Meta, in any form.
+							</li>
+							<li>
+								Meta's "core setup" is on, which can restrict what is shared, such as the parts of web addresses
+								after the domain that show which page you looked at. Meta also applies its own restrictions to data
+								from health-related websites like this one.
+							</li>
+							<li>The pixel only accepts data from this website's own domain.</li>
+							<li>
+								Meta may use first-party cookies set on this website, and may measure whether you visited after
+								seeing one of my ads partly on your own device rather than only on Meta's servers.
+							</li>
+						</ul>
+						<p>
 							You can limit this by adjusting your
 							<a href="https://www.facebook.com/adpreferences/ad_settings" rel="noopener">Meta ad preferences</a>,
 							blocking third-party cookies in your browser, or using a tracker-blocking browser or extension. The

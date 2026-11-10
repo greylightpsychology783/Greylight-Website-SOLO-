@@ -14,8 +14,13 @@
 
 	// Remember campaign tags (UTMs) from ad links for this visit, on any page.
 	onMount(() => captureUtm());
-	afterNavigate(({ to }) => {
+	afterNavigate(({ from, to }) => {
 		if (to?.url) captureUtm(to.url);
+		// The Meta Pixel in app.html counts the first page view. The site switches pages
+		// without a full reload, so count each later page change here.
+		if (from && from.url.pathname !== to?.url.pathname) {
+			(window as unknown as { fbq?: (...args: unknown[]) => void }).fbq?.('track', 'PageView');
+		}
 	});
 </script>
 

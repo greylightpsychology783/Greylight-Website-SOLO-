@@ -245,6 +245,10 @@
 								contact and referral forms are delivered to my practice inbox by Resend. Both may process this
 								information in the United States and other countries where they operate.
 							</li>
+							<li>
+								<strong>Advertising:</strong> the website uses the Meta Pixel, which sends website visit information
+								(not form contents or clinical information) to Meta Platforms in the United States. See section 13.
+							</li>
 						</ul>
 						<p>
 							Before using an overseas provider, I take reasonable steps to make sure it handles personal
@@ -307,17 +311,30 @@
 					<section id="website">
 						<h2>13. This website, cookies and analytics</h2>
 						<p>
-							This website does not use analytics, advertising or tracking cookies. Like most websites, the host
-							automatically records basic technical information (such as your IP address and browser type) to
-							keep the site secure and running. Fonts are loaded from Google Fonts, which means your browser
-							shares your IP address with Google.
+							Like most websites, the host automatically records basic technical information (such as your IP
+							address and browser type) to keep the site secure and running. Fonts are loaded from Google Fonts,
+							which means your browser shares your IP address with Google.
 						</p>
 						<p>
-							Some links to this website, such as those in online advertisements, include campaign tags that
-							show which ad or link you followed. Your browser keeps these tags only for your current visit,
-							and if you send an enquiry or referral, they are included with it so I can see which campaign
-							it came from. No advertising pixels or tracking scripts are used, and this information is not
-							shared with advertising platforms.
+							<strong>Meta Pixel.</strong> This website uses the Meta Pixel, an advertising tool from Meta
+							Platforms (Facebook and Instagram), to measure and improve my online advertising. When you visit, it
+							sends Meta information such as the pages you view, your IP address, browser and device details, and
+							cookie identifiers, which Meta may link to your Facebook or Instagram account. Meta processes this
+							information in the United States and other countries under its own
+							<a href="https://www.facebook.com/privacy/policy/" rel="noopener">privacy policy</a>. The pixel does not
+							receive anything you type into the website's forms, and nothing from your clinical records.
+						</p>
+						<p>
+							You can limit this by adjusting your
+							<a href="https://www.facebook.com/adpreferences/ad_settings" rel="noopener">Meta ad preferences</a>,
+							blocking third-party cookies in your browser, or using a tracker-blocking browser or extension. The
+							website works normally either way.
+						</p>
+						<p>
+							Some links to this website, such as those in online advertisements, also include campaign tags that
+							show which ad or link you followed. Your browser keeps these tags only for your current visit, and
+							if you send an enquiry or referral, they are included with it so I can see which campaign it came
+							from.
 						</p>
 						<p>
 							Please don't include urgent safety concerns in website forms. They are not monitored for urgent

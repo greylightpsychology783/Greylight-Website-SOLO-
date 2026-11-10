@@ -1,0 +1,89 @@
+/* Ad landing page (/start) — scoped */
+.pg-landing { --lp-line:color-mix(in oklab,var(--color-brand-ink),transparent 82%) }
+.pg-landing h2 { font-family:var(--font-family-heading);font-weight:var(--font-weight-regular);font-size:clamp(var(--font-size-700),3vw,2.6rem);line-height:1.08;letter-spacing:var(--tracking-tight);margin:0;text-wrap:balance }
+.pg-landing .eyebrow { margin:0 0 var(--space-3) }
+.pg-landing .lp-section { padding-block:clamp(var(--space-12),7vw,var(--space-20)) }
+.pg-landing .lp-head { max-width:44rem;margin-bottom:clamp(var(--space-8),4vw,var(--space-12)) }
+.pg-landing .lp-head--center { margin-inline:auto;text-align:center }
+
+/* Hero */
+.pg-landing .lp-hero { position:relative;isolation:isolate;overflow:hidden;min-height:min(88svh,46rem);display:flex;align-items:flex-end;color:var(--color-white);background:var(--color-brand-ink) }
+.pg-landing .lp-hero-media { position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center }
+.pg-landing .lp-hero-media video { width:100%;height:100%;object-fit:cover;display:block }
+.pg-landing .lp-hero::after { content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgb(20 27 33 / 78%) 0%,rgb(20 27 33 / 55%) 45%,rgb(20 27 33 / 15%) 100%),linear-gradient(180deg,rgb(20 27 33 / 0%) 40%,rgb(20 27 33 / 55%) 100%) }
+.pg-landing .lp-hero-inner { padding-block:clamp(var(--space-12),8vw,var(--space-20)) }
+@media (max-width:52rem) { .pg-landing .lp-hero::after { background:linear-gradient(180deg,rgb(20 27 33 / 35%) 0%,rgb(20 27 33 / 70%) 45%,rgb(20 27 33 / 88%) 100%) } }
+.pg-landing .lp-hero-copy { max-width:44rem }
+.pg-landing .lp-eyebrow { margin:0 0 var(--space-4);font-size:var(--font-size-200);font-weight:var(--font-weight-semibold);letter-spacing:var(--tracking-wide);color:color-mix(in oklab,var(--color-terracotta-100),white 20%) }
+.pg-landing .lp-hero h1 { margin:0;font-family:var(--font-family-heading);font-weight:var(--font-weight-regular);font-size:clamp(2.4rem,5.4vw,4.4rem);line-height:1.02;letter-spacing:var(--tracking-tighter);color:var(--color-white);text-wrap:balance }
+.pg-landing .lp-lede { margin:var(--space-5) 0 0;font-size:clamp(var(--font-size-300),1.4vw,var(--font-size-500));line-height:1.55;color:color-mix(in oklab,var(--color-white),transparent 10%);max-width:38rem }
+.pg-landing .lp-actions { display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-4) var(--space-6);margin-top:var(--space-8) }
+.pg-landing .lp-actions--center { justify-content:center }
+.pg-landing .lp-text-link { font-weight:var(--font-weight-medium);color:inherit;text-decoration:underline;text-underline-offset:.25em;text-decoration-thickness:1px;text-decoration-color:color-mix(in oklab,currentColor,transparent 50%);transition:text-decoration-color var(--duration-base) var(--ease-standard) }
+.pg-landing .lp-text-link:hover { text-decoration-color:currentColor }
+.pg-landing .lp-trust { list-style:none;margin:var(--space-8) 0 0;padding:0;display:flex;flex-wrap:wrap;gap:var(--space-2) var(--space-6);font-size:var(--font-size-200);color:color-mix(in oklab,var(--color-white),transparent 12%) }
+.pg-landing .lp-trust li { display:inline-flex;align-items:center;gap:var(--space-2);max-width:none }
+.pg-landing .lp-trust svg { color:var(--color-terracotta-100) }
+
+/* What I help with */
+.pg-landing .lp-help { background:var(--color-brand-warm) }
+.pg-landing .lp-areas { list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr));gap:0 clamp(var(--space-8),4vw,var(--space-12)) }
+.pg-landing .lp-areas li { max-width:none;display:grid;grid-template-columns:auto 1fr;align-items:baseline;column-gap:var(--space-3);row-gap:var(--space-1);padding-block:var(--space-4);border-top:1px solid var(--lp-line) }
+.pg-landing .lp-areas li .mark { align-self:center }
+.pg-landing .lp-area-title { font-family:var(--font-family-heading);font-size:var(--font-size-500);line-height:1.2 }
+.pg-landing .lp-area-concerns { grid-column:2;font-size:var(--font-size-200);color:color-mix(in oklab,var(--color-brand-ink),transparent 38%) }
+
+/* Meet Jake */
+.pg-landing .lp-meet-grid { display:grid;gap:clamp(var(--space-8),5vw,var(--space-16));align-items:center }
+.pg-landing .lp-portrait { width:100%;max-width:26rem;aspect-ratio:4 / 5;object-fit:cover;border-radius:clamp(2rem,6vw,4.5rem) var(--radius-lg) clamp(2rem,6vw,4.5rem) var(--radius-lg) }
+.pg-landing .lp-meet-copy { display:flex;flex-direction:column;gap:var(--space-4);max-width:38rem }
+.pg-landing .lp-meet-copy h2 { margin-bottom:var(--space-2) }
+.pg-landing .lp-meet-copy p { margin:0;color:var(--color-text-muted);line-height:var(--line-height-base) }
+.pg-landing .lp-quals { margin-top:var(--space-4);padding-top:var(--space-5);border-top:1px solid var(--color-border) }
+.pg-landing .lp-quals-label { font-size:var(--font-size-200);font-weight:var(--font-weight-semibold);color:var(--color-brand-ink) !important;margin-bottom:var(--space-2) !important }
+.pg-landing .lp-quals ul { margin:0;padding-left:1.1rem;font-size:var(--font-size-200);color:var(--color-text-muted);display:grid;gap:var(--space-1) }
+@media (min-width:52rem) { .pg-landing .lp-meet-grid { grid-template-columns:minmax(0,.8fr) minmax(0,1fr) } }
+
+/* Steps */
+.pg-landing .lp-steps { background:var(--color-section-light) }
+.pg-landing .lp-step-list { list-style:none;margin:0;padding:0;display:grid;gap:var(--space-4);grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr)) }
+.pg-landing .lp-step { max-width:none;padding:var(--space-6);background:var(--color-white);border:1px solid var(--color-border);border-radius:var(--radius-xl) }
+.pg-landing .lp-step-num { display:block;font-size:var(--font-size-200);font-weight:var(--font-weight-semibold);letter-spacing:var(--tracking-wide);color:var(--color-primary);margin-bottom:var(--space-4) }
+.pg-landing .lp-step h3 { margin:0 0 var(--space-2);font-family:var(--font-family-heading);font-weight:var(--font-weight-regular);font-size:var(--font-size-600);line-height:1.15 }
+.pg-landing .lp-step p { margin:0;color:var(--color-text-muted);font-size:var(--font-size-300);line-height:var(--line-height-base) }
+.pg-landing .lp-steps .lp-actions { margin-top:clamp(var(--space-8),4vw,var(--space-12)) }
+
+/* Fees */
+.pg-landing .lp-fee-grid { display:grid;gap:var(--space-4);grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr)) }
+.pg-landing .lp-fee { padding:var(--space-6);border:1px solid var(--color-border);border-radius:var(--radius-xl);background:var(--color-white) }
+.pg-landing .lp-fee--feature { background:var(--color-brand-ink);border-color:var(--color-brand-ink);color:var(--color-white) }
+.pg-landing .lp-fee-label { margin:0;font-size:var(--font-size-200);font-weight:var(--font-weight-semibold);letter-spacing:var(--tracking-wide);color:var(--color-primary-active) }
+.pg-landing .lp-fee--feature .lp-fee-label { color:var(--color-terracotta-100) }
+.pg-landing .lp-fee-price { margin:var(--space-3) 0 0;font-family:var(--font-family-heading);font-size:clamp(2rem,3.2vw,2.6rem);line-height:1 }
+.pg-landing .lp-fee-price span { font-family:var(--font-family-base);font-size:var(--font-size-300);opacity:.7 }
+.pg-landing .lp-fee-note { margin:var(--space-4) 0 0;font-size:var(--font-size-200);line-height:1.5;color:var(--color-text-muted) }
+.pg-landing .lp-fee--feature .lp-fee-note { color:color-mix(in oklab,var(--color-white),transparent 22%) }
+
+/* Enquiry */
+.pg-landing .lp-enquire { background:linear-gradient(180deg,var(--color-section-light) 0%,color-mix(in oklab,var(--color-section-light),white 55%) 100%);scroll-margin-top:var(--nav-height) }
+.pg-landing .lp-enquire-copy { display:flex;flex-direction:column;gap:var(--space-5) }
+.pg-landing .lp-enquire-copy p { margin:0 }
+.pg-landing .lp-enquire .notice h3 { margin:0;font-family:var(--font-family-heading);font-weight:var(--font-weight-regular);font-size:var(--font-size-500) }
+
+/* FAQ */
+.pg-landing .lp-faq-list { border-top:1px solid var(--color-border) }
+
+/* Closing CTA */
+.pg-landing .lp-cta { padding-block:clamp(var(--space-12),7vw,var(--space-20));background:var(--color-brand-ink);color:var(--color-white);text-align:center }
+.pg-landing .lp-cta h2 { color:var(--color-white);max-width:36rem;margin-inline:auto }
+
+/* Footer */
+.pg-landing .lp-footer { padding-block:var(--space-8);background:var(--color-brand-ink);border-top:1px solid color-mix(in oklab,var(--color-white),transparent 88%);color:color-mix(in oklab,var(--color-white),transparent 30%);font-size:var(--font-size-200) }
+.pg-landing .lp-footer-inner { display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--space-3) var(--space-8) }
+.pg-landing .lp-footer p { margin:0;max-width:none }
+.pg-landing .lp-footer a { color:inherit }
+
+@media (prefers-reduced-motion:reduce) { .pg-landing .lp-hero-media video { display:none } }
+
+/* The site-wide "p, li" muted colour would grey out text on the dark sections. */
+.pg-landing .lp-trust li,.pg-landing .lp-fee--feature .lp-fee-price,.pg-landing .lp-footer p { color:inherit }

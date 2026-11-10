@@ -2,6 +2,7 @@
 	import { enhance } from '$app/forms';
 	import Seo from '#lib/components/Seo.svelte';
 	import Icon from '#lib/components/Icon.svelte';
+	import UtmFields from '#lib/components/UtmFields.svelte';
 	import { site, referralLimits } from '#lib/data/site.ts';
 	import '#lib/styles/contact.css';
 
@@ -99,6 +100,7 @@
 								};
 							}}
 						>
+							<UtmFields />
 							{#if form?.formError}
 								<p class="form-alert error" role="alert">
 									Sorry, your referral couldn't be sent right now. Please try again, or email it to

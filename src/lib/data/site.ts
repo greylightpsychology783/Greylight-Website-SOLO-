@@ -8,7 +8,9 @@ export const site = {
 	/** Halaxy online booking for the free 15-minute connection call (Tue–Fri 9–10am slots). */
 	bookingLink:
 		'https://www.halaxy.com/book/psychologist/mr-jake-ciminelli/1723677/1321489?appointmentTypeId=613831',
-	locations: ['Camberwell', 'Richmond', 'Malvern']
+	locations: ['Camberwell', 'Richmond', 'Malvern'],
+	/** AHPRA registration number (e.g. PSY0001234567). Shown on the landing page footer when set. */
+	ahpraNumber: ''
 } as const;
 
 /** Upload limits for the health professional referral form (Vercel caps request bodies at ~4.5 MB). */

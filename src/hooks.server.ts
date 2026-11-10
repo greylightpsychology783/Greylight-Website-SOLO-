@@ -13,9 +13,17 @@ const legacy: Record<string, string> = {
 	'/s/greylight-psychology-2025-privacy-policy.pdf': '/privacy'
 };
 
+/** Landing pages for ad campaigns. Not linked from the site and not indexed. */
+const NOINDEX = ['/start'];
+
 export const handle: Handle = async ({ event, resolve }) => {
 	const path = event.url.pathname.replace(/\/+$/, '').toLowerCase();
 	const target = legacy[path];
 	if (target) redirect(301, target);
-	return resolve(event);
+	const response = await resolve(event);
+	// Unlisted landing pages (ad traffic only): keep them out of search results.
+	if (NOINDEX.some((p) => path === p || path.startsWith(`${p}/`))) {
+		response.headers.set('X-Robots-Tag', 'noindex, nofollow');
+	}
+	return response;
 };

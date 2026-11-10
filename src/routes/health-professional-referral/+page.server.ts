@@ -1,6 +1,7 @@
 import { fail } from '@sveltejs/kit';
 import { EMAIL_RE, escapeHtml as escape, sendToPractice, type Attachment } from '#lib/server/email.ts';
 import { referralLimits } from '#lib/data/site.ts';
+import { readCampaign, campaignLine, campaignHtml } from '#lib/server/utm.ts';
 import type { Actions } from './$types';
 
 export const prerender = false;
@@ -80,14 +81,18 @@ export const actions: Actions = {
 			['Attachments', attachments.length ? attachments.map((a) => a.filename).join(', ') : 'None'],
 			['Patient consent confirmed', 'Yes']
 		];
+		const campaign = readCampaign(data, '/health-professional-referral');
 		const sent = await sendToPractice({
 			tag: 'Referral form',
 			replyTo: values.referrerEmail,
 			subject: `New patient referral: ${patient} (from ${values.referrerName})`,
-			text: rows.map(([k, v]) => `${k}: ${v}`).join('\n') + `\n\nAdditional details:\n${values.details || '—'}`,
+			text:
+				rows.map(([k, v]) => `${k}: ${v}`).join('\n') +
+				`\n\nAdditional details:\n${values.details || '—'}\n\n---\n${campaignLine(campaign)}`,
 			html:
 				`<table cellpadding="4">${rows.map(([k, v]) => `<tr><td><strong>${escape(k)}</strong></td><td>${escape(v)}</td></tr>`).join('')}</table>` +
-				`<p><strong>Additional details:</strong><br>${values.details ? escape(values.details).replace(/\n/g, '<br>') : '—'}</p>`,
+				`<p><strong>Additional details:</strong><br>${values.details ? escape(values.details).replace(/\n/g, '<br>') : '—'}</p>` +
+				campaignHtml(campaign),
 			attachments
 		});
 		if (!sent) return fail(502, { values, errors: {}, formError: true });

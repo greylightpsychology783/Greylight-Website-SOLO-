@@ -1,14 +1,11 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
 	import Seo from '#lib/components/Seo.svelte';
 	import Icon from '#lib/components/Icon.svelte';
+	import EnquiryForm from '#lib/components/EnquiryForm.svelte';
 	import { site } from '#lib/data/site.ts';
 	import '#lib/styles/contact.css';
 
 	let { form } = $props();
-	let submitting = $state(false);
-	const values = $derived(form?.values ?? { name: '', email: '', message: '' });
-	const errors = $derived<Record<string, string | undefined>>(form?.errors ?? {});
 </script>
 
 <Seo
@@ -44,51 +41,7 @@
 						</div>
 					</div>
 
-					{#if form?.success}
-						<div class="surface-card success-card flow" role="status">
-							<p class="eyebrow">Enquiry sent</p>
-							<h2>Thanks, your enquiry is on its way.</h2>
-							<p>I'll reply by email within 48 hours.</p>
-						</div>
-					{:else}
-						<form
-							class="surface-card form flow"
-							style="--flow-space: var(--space-4);"
-							method="post"
-							novalidate
-							use:enhance={() => {
-								submitting = true;
-								return async ({ update }) => {
-									await update({ reset: false });
-									submitting = false;
-								};
-							}}
-						>
-							{#if form?.formError}
-								<p class="form-alert error" role="alert">
-									Sorry, your enquiry couldn't be sent right now. Please try again, or email
-									<a href="mailto:{site.email}">{site.email}</a>.
-								</p>
-							{/if}
-							<div class="field">
-								<label for="name" class="field-label">Full name</label>
-								<input id="name" type="text" name="name" placeholder="" required value={values.name} aria-invalid={!!errors.name} aria-describedby={errors.name ? 'name-error' : undefined} autocomplete="name" />
-								{#if errors.name}<p class="field-error" id="name-error">{errors.name}</p>{/if}
-							</div>
-							<div class="field">
-								<label for="email" class="field-label">Email address</label>
-								<input id="email" type="email" name="email" placeholder="" required value={values.email} aria-invalid={!!errors.email} aria-describedby={errors.email ? 'email-error' : undefined} autocomplete="email" />
-								{#if errors.email}<p class="field-error" id="email-error">{errors.email}</p>{/if}
-							</div>
-							<div class="field">
-								<label for="message" class="field-label">How can I help?</label>
-								<textarea id="message" name="message" placeholder="" required rows="5" aria-invalid={!!errors.message} aria-describedby="message-meta{errors.message ? ' message-error' : ''}">{values.message}</textarea>
-								<p class="field-meta" id="message-meta">Avoid including urgent safety concerns in this form.</p>
-								{#if errors.message}<p class="field-error" id="message-error">{errors.message}</p>{/if}
-							</div>
-							<button class="btn primary md" type="submit" disabled={submitting}>{submitting ? 'Sending…' : 'Send enquiry'}</button>
-						</form>
-					{/if}
+					<EnquiryForm {form} idPrefix="contact" />
 				</div>
 			</div>
 		</section>

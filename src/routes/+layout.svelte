@@ -1,8 +1,22 @@
 <script lang="ts">
 	import '../app.css';
+	import { onMount } from 'svelte';
+	import { afterNavigate } from '$app/navigation';
+	import { page } from '$app/state';
 	import Header from '#lib/components/Header.svelte';
 	import Footer from '#lib/components/Footer.svelte';
+	import LandingHeader from '#lib/components/LandingHeader.svelte';
+	import { captureUtm } from '#lib/utm.ts';
 	let { children } = $props();
+
+	/** Ad landing pages get a minimal header and no site navigation or footer. */
+	const landing = $derived(page.route.id?.startsWith('/start') ?? false);
+
+	// Remember campaign tags (UTMs) from ad links for this visit, on any page.
+	onMount(() => captureUtm());
+	afterNavigate(({ to }) => {
+		if (to?.url) captureUtm(to.url);
+	});
 </script>
 
 <svelte:head>
@@ -19,8 +33,14 @@
 </svelte:head>
 
 <a class="visually-hidden" href="#main-content">Skip to content</a>
-<Header />
+{#if landing}
+	<LandingHeader />
+{:else}
+	<Header />
+{/if}
 <main id="main-content">
 	{@render children()}
 </main>
-<Footer />
+{#if !landing}
+	<Footer />
+{/if}

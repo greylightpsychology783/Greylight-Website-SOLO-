@@ -313,6 +313,13 @@
 							shares your IP address with Google.
 						</p>
 						<p>
+							Some links to this website, such as those in online advertisements, include campaign tags that
+							show which ad or link you followed. Your browser keeps these tags only for your current visit,
+							and if you send an enquiry or referral, they are included with it so I can see which campaign
+							it came from. No advertising pixels or tracking scripts are used, and this information is not
+							shared with advertising platforms.
+						</p>
+						<p>
 							Please don't include urgent safety concerns in website forms. They are not monitored for urgent
 							situations. If you or someone else is in immediate danger, call 000.
 						</p>

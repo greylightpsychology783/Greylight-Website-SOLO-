@@ -7,20 +7,23 @@
 	import Footer from '#lib/components/Footer.svelte';
 	import LandingHeader from '#lib/components/LandingHeader.svelte';
 	import { captureUtm } from '#lib/utm.ts';
+	import { trackMeta, trackBookingClicks } from '#lib/track.ts';
 	let { children } = $props();
 
 	/** Ad landing pages get a minimal header and no site navigation or footer. */
 	const landing = $derived(page.route.id?.startsWith('/start') ?? false);
 
-	// Remember campaign tags (UTMs) from ad links for this visit, on any page.
-	onMount(() => captureUtm());
+	onMount(() => {
+		// Remember campaign tags (UTMs) from ad links for this visit, on any page.
+		captureUtm();
+		// Count "Book a call" clicks (links to Halaxy) as a Meta "Contact" event.
+		return trackBookingClicks();
+	});
 	afterNavigate(({ from, to }) => {
 		if (to?.url) captureUtm(to.url);
 		// The Meta Pixel in app.html counts the first page view. The site switches pages
 		// without a full reload, so count each later page change here.
-		if (from && from.url.pathname !== to?.url.pathname) {
-			(window as unknown as { fbq?: (...args: unknown[]) => void }).fbq?.('track', 'PageView');
-		}
+		if (from && from.url.pathname !== to?.url.pathname) trackMeta('PageView');
 	});
 </script>
 

@@ -2,6 +2,7 @@
 	import { enhance } from '$app/forms';
 	import UtmFields from './UtmFields.svelte';
 	import { site } from '#lib/data/site.ts';
+	import { trackMeta } from '#lib/track.ts';
 
 	interface EnquiryState {
 		success?: boolean;
@@ -38,9 +39,11 @@
 		novalidate
 		use:enhance={() => {
 			submitting = true;
-			return async ({ update }) => {
+			return async ({ result, update }) => {
 				await update({ reset: false });
 				submitting = false;
+				// Tell Meta an enquiry was sent (just the event — no form contents).
+				if (result.type === 'success' && result.data?.success) trackMeta('Lead');
 			};
 		}}
 	>

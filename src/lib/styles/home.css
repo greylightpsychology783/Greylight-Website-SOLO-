@@ -4,6 +4,21 @@
 .hero .hero-left { display:flex;flex-direction:column;gap:var(--space-10) }
 .hero .hero-headline { max-width:36rem }
 .hero .hero-cta { --flow-space:var(--space-6) }
+/* Shorter laptop screens: tighten the hero so the CTA and topic tags fit on first load. */
+@media (min-width:56rem) and (max-height:56rem) {
+  .hero { padding-top:var(--space-8);padding-bottom:var(--space-8) }
+  .hero .hero-left { gap:var(--space-6) }
+  .hero h1 { font-size:clamp(2.1rem,3.2vw,2.6rem) }
+  .hero .hero-cta { --flow-space:var(--space-5) }
+  .hero .hero-picker { gap:var(--space-3) }
+  .hero .hero-tags { gap:.4rem }
+  .hero .tag-btn,.hero .show-more-btn { padding:.3rem .6rem;font-size:var(--font-size-100) }
+}
+@media (min-width:56rem) and (max-height:42rem) {
+  .hero { padding-top:var(--space-5);padding-bottom:var(--space-5) }
+  .hero .hero-left { gap:var(--space-5) }
+  .hero .hero-cta { --flow-space:var(--space-4) }
+}
 .hero .hero-picker { display:flex;flex-direction:column;gap:var(--space-4);max-width:38rem }
 .hero .picker-label { font-family:var(--font-family-heading);font-size:var(--font-size-400);font-weight:var(--font-weight-regular);color:var(--color-brand-ink);line-height:1.3;min-height:1.5em }
 .hero .hero-tags { display:flex;flex-wrap:wrap;gap:var(--space-2) }

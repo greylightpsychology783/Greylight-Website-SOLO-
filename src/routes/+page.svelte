@@ -62,6 +62,7 @@
 						goals. Genuine connection, informed care, and therapy that supports lasting change, delivered
 						with insight, courage and growth at its core.
 					</p>
+					<div class="hero-cta"><a class="btn primary md" href={site.bookingLink}>Book a free connection call <Icon name="arrow" /></a></div>
 				</div>
 				<div class="hero-picker">
 					<div class="picker-label">
@@ -71,7 +72,6 @@
 						{#each heroTags as t (t.href)}<a class="tag-btn" href={t.href}>{t.label}</a>{/each}
 						<a class="show-more-btn" href="/how-i-help">+{totalConcerns - heroTags.length} more</a>
 					</div>
-					<a class="hero-finder-cta" href={site.bookingLink}><span>Book a free connection call</span> <Icon name="arrow" /></a>
 				</div>
 			</div>
 			<div class="hero-bento">

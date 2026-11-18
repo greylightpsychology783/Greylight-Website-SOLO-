@@ -304,6 +304,11 @@ a.btn[aria-disabled=true] { pointer-events:none;opacity:.6;transform:none }
 .footer-logo { display:block;height:4rem;width:9rem;background:var(--color-white);mask:url(/brand/greylight-logo.svg) center / contain no-repeat;-webkit-mask:url(/brand/greylight-logo.svg) center / contain no-repeat }
 .footer-email { font-size:var(--font-size-200);font-weight:var(--font-weight-medium);color:var(--color-blue-100);text-decoration:none;transition:color var(--duration-base) var(--ease-standard) }
 .footer-email:hover { color:var(--color-white) }
+.footer-badge { display:inline-block;margin-top:var(--space-4);border-radius:var(--radius-pill);transition:transform var(--duration-base) var(--ease-standard),opacity var(--duration-base) var(--ease-standard) }
+.footer-badge img { display:block;width:clamp(160px,18vw,200px);height:auto }
+.footer-badge:hover { transform:translateY(-2px);opacity:.92 }
+.footer-badge:focus-visible { outline:2px solid var(--color-white);outline-offset:3px }
+@media (prefers-reduced-motion:reduce) { .footer-badge,.footer-badge:hover { transition:none;transform:none } }
 .footer-heading { margin:0 0 var(--space-3);font-family:var(--font-family-base);font-size:var(--font-size-200);font-weight:var(--font-weight-semibold);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:color-mix(in oklab,var(--color-white),transparent 35%) }
 .footer-heading--sub { margin-top:var(--space-6) }
 .footer-list { list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:var(--space-2) }

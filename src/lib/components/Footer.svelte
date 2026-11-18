@@ -14,6 +14,17 @@
 					>Book a call <svg class="right-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a
 				>
 				<a class="footer-email" href="mailto:{site.email}">{site.email}</a>
+				<a class="footer-badge" href="https://intersession.io" target="_blank" rel="noopener">
+					<img
+						src="/images/badges/intersession-clinic.webp"
+						alt="This is an InterSession Clinic"
+						width="200"
+						height="45"
+						loading="lazy"
+						decoding="async"
+					/>
+					<span class="visually-hidden">(opens intersession.io in a new tab)</span>
+				</a>
 			</div>
 			<div class="footer-col-group">
 				<div class="footer-col-wrapper">

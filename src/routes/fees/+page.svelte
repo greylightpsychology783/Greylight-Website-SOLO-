@@ -168,11 +168,12 @@
 						<h3 class="scheme-name">Medicare — Better Access Initiative</h3>
 						<p class="scheme-summary">
 							Available with a valid Mental Health Treatment Plan from your GP, psychiatrist or paediatrician.
+							Medicare rebates <strong>{fees.rebate}</strong> of the {fees.sessionFee} session fee.
 						</p>
 					</div>
 					<div class="scheme-rebate">
-						<span class="label-eyebrow">At a glance</span>
-						<p class="scheme-rebate-value">{fees.rebate} rebate ({fees.outOfPocket} out-of-pocket).</p>
+						<span class="label-eyebrow">You pay (out of pocket)</span>
+						<p class="scheme-rebate-value">{fees.outOfPocket} per session.</p>
 					</div>
 					<a class="scheme-link" href="#mhtp">How to get a plan <Icon name="arrow" size={14} /></a>
 				</li>

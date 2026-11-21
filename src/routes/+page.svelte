@@ -128,8 +128,8 @@
 				<h2 id="meet-heading" class="section-title">Jake Ciminelli</h2>
 				<p class="meet-title">Principal Clinical Psychologist · BA (Psych), GDipPsych(Adv), MClinPsych</p>
 				<p>
-					I'm a registered clinical psychologist based in Melbourne. With an abundance of clinical
-					experience and therapeutic precision, I endeavour to understand your unique needs, history
+					I'm a registered clinical psychologist based in Melbourne. Drawing on my wealth of clinical
+					experience, I endeavour to understand your unique needs, history
 					and present circumstances in service of supporting you on your journey towards a
 					self-actualised and fulfilling life.
 				</p>

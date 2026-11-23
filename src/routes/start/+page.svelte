@@ -73,7 +73,7 @@
 				<h1 id="lp-title">Warm, evidence-based therapy for lasting change.</h1>
 				<p class="lp-lede">
 					I'm Jake, a clinical psychologist offering therapy tailored to your goals. Sessions are by
-					secure telehealth anywhere in Australia, or in person in Camberwell, Richmond and Malvern.
+					secure telehealth anywhere in Australia, or in person in Camberwell, Richmond and Malvern (VIC).
 				</p>
 				<div class="lp-actions">
 					<a class="btn primary md" href={site.bookingLink}>Book a free 15-minute call <Icon name="arrow" /></a>

@@ -13,6 +13,10 @@ export const site = {
 	ahpraNumber: ''
 } as const;
 
+/** Suburbs as a sentence, e.g. "Camberwell, Richmond and Malvern (VIC)". */
+export const locationsText = (word: 'and' | 'or' | ', and' = 'and') =>
+	`${site.locations.slice(0, -1).join(', ')}${word === ', and' ? ', and' : ` ${word}`} ${site.locations.at(-1)} (VIC)`;
+
 /** Upload limits for the health professional referral form (Vercel caps request bodies at ~4.5 MB). */
 export const referralLimits = {
 	maxFiles: 5,

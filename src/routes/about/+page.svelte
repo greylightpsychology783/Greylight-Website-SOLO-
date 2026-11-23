@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Seo from '#lib/components/Seo.svelte';
-	import { site, fees } from '#lib/data/site.ts';
+	import { site, fees, locationsText } from '#lib/data/site.ts';
 	import '#lib/styles/about.css';
 
 	const focusAreas = ['OCD & Pure-O', 'Anxiety', 'Trauma', 'Self-esteem'];
@@ -163,7 +163,7 @@
 					<ul class="glance-list">
 						<li>In-person and telehealth</li>
 						<li>Medicare-rebated telehealth, Australia-wide</li>
-						<li>Locations: {site.locations.join(', ').replace(/, ([^,]*)$/, ', and $1')}</li>
+						<li>Locations: {locationsText(', and')}</li>
 						<li>Weekday appointments</li>
 						<li>50-minute sessions</li>
 					</ul>

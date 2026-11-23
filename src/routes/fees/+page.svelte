@@ -7,7 +7,7 @@
 
 <Seo
 	title="Fees & Availability"
-	description="Clinical psychology sessions are {fees.sessionFee}, or {fees.outOfPocket} out of pocket with a Mental Health Treatment Plan. In person in Camberwell, Richmond and Malvern, or telehealth Australia-wide."
+	description="Clinical psychology sessions are {fees.sessionFee}, or {fees.outOfPocket} out of pocket with a Mental Health Treatment Plan. In person in Camberwell, Richmond and Malvern (VIC), or telehealth Australia-wide."
 />
 
 <div class="pg-fees">

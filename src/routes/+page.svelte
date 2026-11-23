@@ -5,7 +5,7 @@
 	import Typewriter from '#lib/components/Typewriter.svelte';
 	import Accordion from '#lib/components/Accordion.svelte';
 	import { clusters, clusterHref, getCluster } from '#lib/data/services.ts';
-	import { fees, site } from '#lib/data/site.ts';
+	import { fees, site, locationsText } from '#lib/data/site.ts';
 	import '#lib/styles/home.css';
 
 	const tag = (slug: string, id: string, label: string) => ({ href: clusterHref(getCluster(slug)!, id), label });
@@ -47,7 +47,7 @@
 
 <Seo
 	title=""
-	description="Greylight Psychology: warm, evidence-based therapy with clinical psychologist Jake Ciminelli. In person in Camberwell, Richmond and Malvern, and telehealth Australia-wide. Medicare rebates available."
+	description="Greylight Psychology: warm, evidence-based therapy with clinical psychologist Jake Ciminelli. In person in Camberwell, Richmond and Malvern (VIC), and telehealth Australia-wide. Medicare rebates available."
 />
 
 <section class="hero">
@@ -165,7 +165,7 @@
 						<span class="shape shape-circle tone-ink" aria-hidden="true"></span>
 						<div class="pillar-text">
 							<strong>Convenience.</strong>
-							<span>See me in person in {site.locations.join(', ').replace(/, ([^,]*)$/, ' or $1')}, or entirely online, flexible and secure, from anywhere in Australia.</span>
+							<span>See me in person in {locationsText('or')}, or entirely online, flexible and secure, from anywhere in Australia.</span>
 						</div>
 					</li>
 					<li class="pillar">
@@ -248,7 +248,7 @@
 				</Accordion>
 				<Accordion question="Where are you located?">
 					<p>
-						I see clients in person in {site.locations.join(', ').replace(/, ([^,]*)$/, ' and $1')}, Melbourne, and via
+						I see clients in person in {locationsText()}, and via
 						telehealth anywhere in Australia, with broad availability throughout the week.
 					</p>
 				</Accordion>

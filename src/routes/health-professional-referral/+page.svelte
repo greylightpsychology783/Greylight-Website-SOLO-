@@ -3,7 +3,7 @@
 	import Seo from '#lib/components/Seo.svelte';
 	import Icon from '#lib/components/Icon.svelte';
 	import UtmFields from '#lib/components/UtmFields.svelte';
-	import { site, referralLimits } from '#lib/data/site.ts';
+	import { site, referralLimits, locationsText } from '#lib/data/site.ts';
 	import '#lib/styles/contact.css';
 
 	let { form } = $props();
@@ -65,7 +65,7 @@
 						</p>
 						<div class="meta flow" style="--flow-space: var(--space-3);">
 							<div class="meta-row"><Icon name="mail" size={20} /> <a href="mailto:{site.email}">{site.email}</a></div>
-							<div class="meta-row"><Icon name="pin" size={20} /> <p>In person in {site.locations.join(', ').replace(/, ([^,]*)$/, ' and $1')}, and telehealth Australia-wide.</p></div>
+							<div class="meta-row"><Icon name="pin" size={20} /> <p>In person in {locationsText()}, and telehealth Australia-wide.</p></div>
 						</div>
 						<ul class="bullet-list referral-points">
 							<li>Suitable for GPs, psychiatrists, paediatricians, allied health clinicians and care coordinators.</li>

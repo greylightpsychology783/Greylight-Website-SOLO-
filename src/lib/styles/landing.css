@@ -7,7 +7,7 @@
 .pg-landing .lp-head--center { margin-inline:auto;text-align:center }
 
 /* Hero */
-.pg-landing .lp-hero { position:relative;isolation:isolate;overflow:hidden;min-height:min(88svh,46rem);display:flex;align-items:flex-end;color:var(--color-white);background:var(--color-brand-ink) }
+.pg-landing .lp-hero { position:relative;isolation:isolate;overflow:hidden;min-height:calc(100svh - var(--nav-height));display:flex;align-items:flex-end;color:var(--color-white);background:var(--color-brand-ink) }
 .pg-landing .lp-hero-media { position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center }
 .pg-landing .lp-hero-media video { width:100%;height:100%;object-fit:cover;display:block }
 .pg-landing .lp-hero::after { content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgb(20 27 33 / 78%) 0%,rgb(20 27 33 / 55%) 45%,rgb(20 27 33 / 15%) 100%),linear-gradient(180deg,rgb(20 27 33 / 0%) 40%,rgb(20 27 33 / 55%) 100%) }

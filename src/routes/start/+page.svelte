@@ -12,7 +12,6 @@
 
 	let { form } = $props();
 
-	const heroPoster = '/images/therapy-1.avif';
 
 	/** Intro video: only the poster loads at first; the video file downloads when someone presses play. */
 	const intro = { src: '/videos/jake-intro.mp4', poster: '/videos/jake-intro-poster.jpg' };
@@ -101,7 +100,6 @@
 <div class="pg-landing">
 	<!-- Hero -->
 	<section class="lp-hero" aria-labelledby="lp-title">
-		<div class="lp-hero-media" style="background-image:url({heroPoster})" aria-hidden="true"></div>
 		<div class="container container-lg lp-hero-inner">
 			<div class="lp-hero-copy">
 				<p class="lp-eyebrow">Telehealth anywhere in Australia · In person in Melbourne</p>
@@ -120,6 +118,8 @@
 				</div>
 			</div>
 			<figure class="lp-intro" aria-label="A quick hello from Jake">
+				<span class="lp-intro-accent" aria-hidden="true"></span>
+				<span class="lp-intro-dot" aria-hidden="true"></span>
 				<div class="lp-intro-frame">
 					{#if introPlaying}
 						<!-- svelte-ignore a11y_media_has_caption (captions are burned into the video) -->

@@ -7,16 +7,14 @@
 .pg-landing .lp-head--center { margin-inline:auto;text-align:center }
 
 /* Hero */
-.pg-landing .lp-hero { position:relative;isolation:isolate;overflow:hidden;min-height:calc(100svh - var(--nav-height));display:flex;align-items:flex-end;color:var(--color-white);background:var(--color-brand-ink) }
-.pg-landing .lp-hero-media { position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center }
-.pg-landing .lp-hero::after { content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgb(20 27 33 / 78%) 0%,rgb(20 27 33 / 55%) 45%,rgb(20 27 33 / 15%) 100%),linear-gradient(180deg,rgb(20 27 33 / 0%) 40%,rgb(20 27 33 / 55%) 100%) }
-/* Hero sizes follow the screen height as well as the width, so the whole hero (trust ticks included) fits above the fold on short laptop screens. */
+/* Light, on-brand hero like the homepage: warm wash on pale slate, dark text, brand shapes framing the video */
+.pg-landing .lp-hero { position:relative;isolation:isolate;overflow:hidden;min-height:calc(100svh - var(--nav-height));display:flex;align-items:flex-end;color:var(--color-brand-ink);background:radial-gradient(120% 120% at 100% 0%,color-mix(in oklab,var(--color-brand-warm),white 62%) 0%,transparent 40%),linear-gradient(180deg,var(--color-surface) 0%,var(--color-bg) 100%) }
+/* Hero sizes follow the screen height as well as the width, so the whole hero fits above the fold on short laptop screens. */
 .pg-landing .lp-hero-inner { padding-block:clamp(var(--space-8),min(8vw,7svh),var(--space-20)) }
-@media (max-width:52rem) { .pg-landing .lp-hero::after { background:linear-gradient(180deg,rgb(20 27 33 / 35%) 0%,rgb(20 27 33 / 70%) 45%,rgb(20 27 33 / 88%) 100%) } }
 .pg-landing .lp-hero-copy { max-width:44rem }
-.pg-landing .lp-eyebrow { margin:0 0 var(--space-4);font-size:var(--font-size-200);font-weight:var(--font-weight-semibold);letter-spacing:var(--tracking-wide);color:color-mix(in oklab,var(--color-terracotta-100),white 20%) }
-.pg-landing .lp-hero h1 { margin:0;font-family:var(--font-family-heading);font-weight:var(--font-weight-regular);font-size:clamp(2.4rem,min(5.4vw,8.5svh),4.4rem);line-height:1.02;letter-spacing:var(--tracking-tighter);color:var(--color-white);text-wrap:balance }
-.pg-landing .lp-lede { margin:clamp(var(--space-3),2svh,var(--space-5)) 0 0;font-size:clamp(var(--font-size-300),min(1.4vw,2.8svh),var(--font-size-500));line-height:1.55;color:color-mix(in oklab,var(--color-white),transparent 10%);max-width:38rem }
+.pg-landing .lp-eyebrow { margin:0 0 var(--space-4);font-size:var(--font-size-200);font-weight:var(--font-weight-semibold);letter-spacing:var(--tracking-wide);color:var(--color-primary-active) }
+.pg-landing .lp-hero h1 { margin:0;font-family:var(--font-family-heading);font-weight:var(--font-weight-regular);font-size:clamp(2.4rem,min(5.4vw,8.5svh),4.4rem);line-height:1.02;letter-spacing:var(--tracking-tighter);color:var(--color-brand-ink);text-wrap:balance }
+.pg-landing .lp-lede { margin:clamp(var(--space-3),2svh,var(--space-5)) 0 0;font-size:clamp(var(--font-size-300),min(1.4vw,2.8svh),var(--font-size-500));line-height:1.55;color:var(--color-text-muted);max-width:38rem }
 .pg-landing .lp-actions { display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-4) var(--space-6);margin-top:var(--space-8) }
 .pg-landing .lp-hero .lp-actions { margin-top:clamp(var(--space-5),4svh,var(--space-8)) }
 .pg-landing .lp-actions--center { justify-content:center }
@@ -24,13 +22,27 @@
 .pg-landing .lp-text-link:hover { text-decoration-color:currentColor }
 /* Trust badges: one row on wide screens, wrapping on phones */
 .pg-landing .lp-badges { list-style:none;margin:clamp(var(--space-4),3svh,var(--space-6)) 0 0;padding:0;display:flex;flex-wrap:wrap;gap:var(--space-2) }
-.pg-landing .lp-badges li { display:inline-flex;align-items:center;gap:var(--space-2);max-width:none;margin:0;padding:var(--space-1) var(--space-3);border-radius:var(--radius-pill);border:1px solid color-mix(in oklab,var(--color-white),transparent 78%);background:color-mix(in oklab,var(--color-white),transparent 90%);font-size:var(--font-size-200);font-weight:var(--font-weight-medium);line-height:1.35;color:var(--color-white) }
-.pg-landing .lp-badges svg { flex:none;color:var(--color-terracotta-100) }
+.pg-landing .lp-badges li { display:inline-flex;align-items:center;gap:var(--space-2);max-width:none;margin:0;padding:var(--space-1) var(--space-3);border-radius:var(--radius-pill);border:1px solid var(--color-blue-100);background:var(--color-blue-100);font-size:var(--font-size-200);font-weight:var(--font-weight-medium);line-height:1.35;color:var(--color-brand-ink) }
+.pg-landing .lp-badges svg { flex:none;color:var(--color-primary) }
 
 /* Intro video: right of the copy on wide screens, below the buttons on phones. Poster only until play is pressed. */
 .pg-landing .lp-hero-inner { display:grid;gap:var(--space-8);align-items:end }
-.pg-landing .lp-intro { margin:0;justify-self:center;width:min(100%,18rem) }
-.pg-landing .lp-intro-frame { position:relative;width:min(100%,18rem);aspect-ratio:9/16;border-radius:var(--radius-lg);overflow:hidden;background:var(--color-brand-ink);box-shadow:0 18px 48px rgb(0 0 0 / 35%);border:3px solid var(--color-white) }
+/*
+ * The video sits on a small "bento" of brand shapes (from the homepage hero). The shapes live entirely inside the
+ * figure's own padding box, peeking out around the video's edges, so they can never cover the text beside it.
+ */
+.pg-landing .lp-intro { position:relative;isolation:isolate;margin:0;justify-self:center;max-width:100%;padding:clamp(1.25rem,3vw,2.25rem) clamp(1.75rem,4vw,3rem) }
+.pg-landing .lp-intro::before,.pg-landing .lp-intro::after,.pg-landing .lp-intro-accent,.pg-landing .lp-intro-dot { content:"";position:absolute;z-index:-1;aspect-ratio:1;pointer-events:none }
+/* Balanced diagonal: big sand card behind (lower right) and soft-blue circle (upper left), small navy and terracotta accents on the other corners */
+/* sand card offset behind the video, with the homepage bento's big curved corner */
+.pg-landing .lp-intro::before { aspect-ratio:auto;top:20%;right:0;bottom:0;left:28%;background:var(--color-brand-warm);border-radius:clamp(3rem,8vw,5rem) var(--radius-xl) var(--radius-xl) var(--radius-xl) }
+/* soft-blue circle, upper left */
+.pg-landing .lp-intro::after { left:0;top:0;width:44%;background:var(--color-blue-100);border-radius:50% }
+/* small navy circle, upper right, sitting just above the sand card */
+.pg-landing .lp-intro-accent { right:5%;top:7%;width:16%;background:var(--color-brand-ink);border-radius:50% }
+/* terracotta dot, lower left */
+.pg-landing .lp-intro-dot { left:8%;bottom:9%;width:10%;background:var(--color-terracotta-100);border-radius:50% }
+.pg-landing .lp-intro-frame { position:relative;width:18rem;max-width:100%;aspect-ratio:9/16;border-radius:var(--radius-lg);overflow:hidden;background:var(--color-brand-ink);box-shadow:0 18px 44px rgb(20 27 33 / 22%);border:3px solid var(--color-white) }
 .pg-landing .lp-intro-frame video,.pg-landing .lp-intro-play,.pg-landing .lp-intro-play img { display:block;width:100%;height:100% }
 .pg-landing .lp-intro-frame video { object-fit:cover;background:#000 }
 .pg-landing .lp-intro-play { position:relative;padding:0;border:0;background:none;cursor:pointer;color:var(--color-brand-ink) }
@@ -42,10 +54,11 @@
 @media (min-width:60rem) {
 	/* Centre the hero content vertically (no empty band at the top); the video sits in the middle of the space right of the copy */
 	.pg-landing .lp-hero { align-items:center }
-	.pg-landing .lp-hero-inner { grid-template-columns:minmax(0,44rem) minmax(0,1fr);align-items:center;column-gap:0 }
-	.pg-landing .lp-intro { justify-self:center;width:auto }
-	/* Sized by screen height so it fits beside the copy on short laptop screens */
-	.pg-landing .lp-intro-frame { width:auto;height:min(58svh,34rem) }
+	/* The video column never gets narrower than 20rem, so the text column gives way instead of overlapping */
+	.pg-landing .lp-hero-inner { grid-template-columns:minmax(0,44rem) minmax(20rem,1fr);align-items:center;column-gap:0 }
+	.pg-landing .lp-intro { justify-self:center }
+	/* Sized by screen height so it fits beside the copy on short laptop screens, but never wider than its column */
+	.pg-landing .lp-intro-frame { width:calc(min(58svh,34rem) * 9 / 16) }
 }
 
 /* Mobile: sticky booking button after the hero's button scrolls away */
@@ -80,6 +93,7 @@
 
 /* Meet Jake */
 /* One readable column, introduced by a small round portrait beside the heading */
+.pg-landing .lp-meet { background:var(--color-section-light) }
 .pg-landing .lp-meet-inner { display:flex;flex-direction:column;gap:var(--space-6);max-width:48rem;margin-inline:auto }
 .pg-landing .lp-meet-copy p { max-width:none }
 .pg-landing .lp-meet-head { display:flex;align-items:center;gap:clamp(var(--space-4),3vw,var(--space-6)) }

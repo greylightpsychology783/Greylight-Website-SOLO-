@@ -7,17 +7,17 @@
 	import Footer from '#lib/components/Footer.svelte';
 	import LandingHeader from '#lib/components/LandingHeader.svelte';
 	import { captureUtm } from '#lib/utm.ts';
-	import { trackMeta, trackBookingClicks } from '#lib/track.ts';
+	import { trackMeta, trackClicks } from '#lib/track.ts';
 	let { children } = $props();
 
-	/** Ad landing pages get a minimal header and no site navigation or footer. */
-	const landing = $derived(page.route.id?.startsWith('/start') ?? false);
+	/** Ad landing pages (and the thank-you page after an enquiry) get a minimal header and no site navigation or footer. */
+	const landing = $derived(['/start', '/thank-you'].some((p) => page.route.id?.startsWith(p)));
 
 	onMount(() => {
 		// Remember campaign tags (UTMs) from ad links for this visit, on any page.
 		captureUtm();
-		// Count "Book a call" clicks (links to Halaxy) as a Meta "Contact" event.
-		return trackBookingClicks();
+		// Count booking clicks (Halaxy) as "Schedule" and phone-link taps as "Contact".
+		return trackClicks();
 	});
 	afterNavigate(({ from, to }) => {
 		if (to?.url) captureUtm(to.url);

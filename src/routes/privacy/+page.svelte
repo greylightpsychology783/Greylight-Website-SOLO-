@@ -320,8 +320,8 @@
 							Platforms (Facebook and Instagram), to measure and improve my online advertising. When you visit, it
 							sends Meta information such as the pages you view, your IP address, browser and device details, and
 							cookie identifiers, which Meta may link to your Facebook or Instagram account. It also tells Meta when
-							someone sends an enquiry or clicks to book a free call, so I can see which ads lead to contact (only
-							that the action happened, not anything you type or book). Meta processes this
+							someone sends an enquiry, clicks to book a free call or taps a phone number, so I can see which ads
+							lead to contact (only that the action happened, not anything you type or book). Meta processes this
 							information in the United States and other countries under its own
 							<a href="https://www.facebook.com/privacy/policy/" rel="noopener">privacy policy</a>. The pixel does not
 							receive anything you type into the website's forms, and nothing from your clinical records.

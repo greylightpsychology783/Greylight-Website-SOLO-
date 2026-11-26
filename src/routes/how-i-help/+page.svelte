@@ -6,6 +6,17 @@
 	import { clusters, clusterHref } from '#lib/data/services.ts';
 	import { site } from '#lib/data/site.ts';
 	import '#lib/styles/services.css';
+
+	/** Button wording per area, written in sentence case (keeps acronyms like OCD intact). */
+	const exploreName: Record<string, string> = {
+		anxiety: 'anxiety & panic',
+		ocd: 'OCD & Pure-O',
+		trauma: 'trauma',
+		depression: 'depression',
+		relationships: 'relationships',
+		'self-direction': 'self & direction',
+		transitions: 'life transitions'
+	};
 </script>
 
 <Seo
@@ -63,7 +74,7 @@
 							{c.concerns.map((x) => x.title).join(', ')}
 						</p>
 						<div class="feature-actions">
-							<a class="btn primary md" href={clusterHref(c)}>Explore {c.label.toLowerCase()} support <Icon name="arrow" /></a>
+							<a class="btn primary md" href={clusterHref(c)}>Explore support for {exploreName[c.slug] ?? c.label.toLowerCase()} <Icon name="arrow" /></a>
 							<a class="btn secondary md" href={site.bookingLink}>Get started</a>
 						</div>
 					</div>

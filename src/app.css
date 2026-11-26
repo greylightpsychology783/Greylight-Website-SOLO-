@@ -129,7 +129,7 @@ input:focus,textarea:focus { border-color:var(--color-primary);box-shadow:0 0 0 
 .container-full { --content-max-width: 100% }
 
 /* Button */
-.btn { position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);height:var(--button-height);padding-inline:var(--space-5);border-radius:var(--radius-sm);border:1px solid transparent;font-weight:var(--font-weight-semibold);font-size:var(--font-size-300);text-transform:capitalize;text-decoration:none;transition:border-color var(--duration-base) var(--ease-standard),color var(--duration-base) var(--ease-standard),transform var(--duration-fast) var(--ease-standard) }
+.btn { position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);height:var(--button-height);padding-inline:var(--space-5);border-radius:var(--radius-sm);border:1px solid transparent;font-weight:var(--font-weight-semibold);font-size:var(--font-size-300);text-decoration:none;transition:border-color var(--duration-base) var(--ease-standard),color var(--duration-base) var(--ease-standard),transform var(--duration-fast) var(--ease-standard) }
 .btn:before { content:"";position:absolute;inset:0;z-index:-1;background:transparent;transform:scaleX(0);transform-origin:right center;transition:transform var(--duration-base) var(--ease-standard);will-change:transform }
 .btn:hover:before { transform:scaleX(1);transform-origin:left center }
 .btn.primary { background:var(--color-primary);color:var(--color-white) }

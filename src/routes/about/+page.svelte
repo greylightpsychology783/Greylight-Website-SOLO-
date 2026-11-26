@@ -77,13 +77,13 @@
 								<li class="meta-sep" aria-hidden="true">·</li>
 								<li>Melbourne based</li>
 								<li class="meta-sep" aria-hidden="true">·</li>
-								<li>Teens and adults</li>
+								<li>Ages 15+</li>
 							</ul>
 						</div>
 						<hr class="lede-rule" aria-hidden="true" />
 						<p class="hero-intro">
 							If you're feeling stuck, overwhelmed, or anxious, I'm glad you're here. I'm the Principal
-							Clinical Psychologist at Greylight Psychology. I work with adolescents and adults
+							Clinical Psychologist at Greylight Psychology. I work with people aged 15+
 							experiencing anxiety, OCD, depression, trauma-related difficulties, relationship concerns
 							and life transitions, in person in Melbourne and via telehealth across Australia.
 						</p>

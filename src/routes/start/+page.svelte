@@ -5,23 +5,65 @@
 	import Mark from '#lib/components/Mark.svelte';
 	import Accordion from '#lib/components/Accordion.svelte';
 	import EnquiryForm from '#lib/components/EnquiryForm.svelte';
-	import { clusters } from '#lib/data/services.ts';
+	import { clusters, type Shape, type Tone } from '#lib/data/services.ts';
 	import { site, fees } from '#lib/data/site.ts';
 	import '#lib/styles/contact.css';
 	import '#lib/styles/landing.css';
 
 	let { form } = $props();
 
-	/**
-	 * Hero video. Drop the files in static/videos/ and fill these in; until then the poster image shows.
-	 * Keep it muted, 15–30s, no essential speech (or burn in captions).
-	 */
-	const heroVideo: { mp4?: string; webm?: string } = {};
 	const heroPoster = '/images/therapy-1.avif';
 
-	let video = $state<HTMLVideoElement>();
+	/** Intro video: only the poster loads at first; the video file downloads when someone presses play. */
+	const intro = { src: '/videos/jake-intro.mp4', poster: '/videos/jake-intro-poster.jpg' };
+	let introPlaying = $state(false);
+
+	/**
+	 * "How I help" cards for this landing page only (the main site keeps its own order and groupings).
+	 * Ordered by focus, with Men's issues pulled out of "Self & direction" into its own card.
+	 */
+	type Area = { key: string; title: string; shape: Shape; tone: Tone; concerns: string[] };
+	const area = (slug: string, title?: string): Area => {
+		const c = clusters.find((x) => x.slug === slug)!;
+		return {
+			key: slug,
+			title: title ?? c.title,
+			shape: c.shape,
+			tone: c.tone,
+			concerns: c.concerns.filter((x) => x.id !== 'mens-issues').map((x) => x.title)
+		};
+	};
+	const helpAreas: Area[] = [
+		area('ocd'),
+		area('anxiety'),
+		area('trauma', 'Trauma & CPTSD'),
+		{ key: 'mens', title: "Men's issues", shape: 'quarter-tl', tone: 'terracotta', concerns: ['Stress', 'Relationships', 'Identity', 'Expectations'] },
+		area('transitions', 'Life changes & transitions'),
+		area('depression'),
+		area('relationships'),
+		area('self-direction')
+	];
+
+	const badges = ['No waitlist: appointments this week', 'Medicare rebates available', 'Free 15-min call'];
+
+	/** Mobile: a sticky booking button once the hero's button has scrolled away (hidden at the enquiry form). */
+	let heroCta = $state<HTMLElement>();
+	let pastHero = $state(false);
+	let atForm = $state(false);
+	const showSticky = $derived(pastHero && !atForm);
+
 	onMount(() => {
-		if (video && matchMedia('(prefers-reduced-motion: reduce)').matches) video.pause();
+		const enquire = document.getElementById('enquire');
+		if (!heroCta || !enquire || !('IntersectionObserver' in window)) return;
+		const io = new IntersectionObserver((entries) => {
+			for (const e of entries) {
+				if (e.target === heroCta) pastHero = !e.isIntersecting && e.boundingClientRect.top < 0;
+				else atForm = e.isIntersecting;
+			}
+		});
+		io.observe(heroCta);
+		io.observe(enquire);
+		return () => io.disconnect();
 	});
 
 	const training = [
@@ -42,7 +84,7 @@
 		},
 		{
 			title: 'Your first session',
-			body: "A chance to talk about what's been happening and what you'd like to change. Together we build an understanding of your story, goals and needs, and a plan for therapy."
+			body: "We start by understanding what's happening for you and what you'd like to change. From there, we co-design a tailored, evidence-based plan to help you move toward the life you want to live."
 		}
 	];
 
@@ -59,31 +101,77 @@
 <div class="pg-landing">
 	<!-- Hero -->
 	<section class="lp-hero" aria-labelledby="lp-title">
-		<div class="lp-hero-media" style="background-image:url({heroPoster})" aria-hidden="true">
-			{#if heroVideo.mp4 || heroVideo.webm}
-				<video bind:this={video} autoplay muted loop playsinline preload="metadata" poster={heroPoster}>
-					{#if heroVideo.webm}<source src={heroVideo.webm} type="video/webm" />{/if}
-					{#if heroVideo.mp4}<source src={heroVideo.mp4} type="video/mp4" />{/if}
-				</video>
-			{/if}
-		</div>
+		<div class="lp-hero-media" style="background-image:url({heroPoster})" aria-hidden="true"></div>
 		<div class="container container-lg lp-hero-inner">
 			<div class="lp-hero-copy">
-				<p class="lp-eyebrow">Telehealth Australia-wide · In person in Melbourne</p>
-				<h1 id="lp-title">Warm, evidence-based therapy for lasting change.</h1>
+				<p class="lp-eyebrow">Telehealth anywhere in Australia · In person in Melbourne</p>
+				<h1 id="lp-title">Feeling stuck, overwhelmed or anxious? I'm glad you're here.</h1>
 				<p class="lp-lede">
-					I'm Jake, a clinical psychologist offering therapy tailored to your goals. Sessions are by
-					secure telehealth anywhere in Australia, or in person in Camberwell, Richmond and Malvern (VIC).
+					I'm Jake, a clinical psychologist helping people 15+ with OCD (including Pure-O), anxiety, complex
+					trauma (CPTSD), men's issues and life changes. Sessions by secure telehealth from anywhere in
+					Australia, or in person in Camberwell, Richmond or Malvern.
 				</p>
-				<div class="lp-actions">
-					<a class="btn primary md" href={site.bookingLink}>Book a free 15-minute call <Icon name="arrow" /></a>
-					<a class="lp-text-link" href="#enquire">Prefer to email? Send an enquiry</a>
-				</div>
-				<ul class="lp-trust">
-					<li><Icon name="check" /> Medicare rebates with a Mental Health Treatment Plan</li>
-					<li><Icon name="check" /> Free, no-obligation 15-minute call</li>
-					<li><Icon name="check" /> Telehealth or in person</li>
+				<ul class="lp-badges">
+					{#each badges as b (b)}<li><Icon name="check" /> {b}</li>{/each}
 				</ul>
+				<div class="lp-actions" bind:this={heroCta}>
+					<a class="btn primary md" href={site.bookingLink}>Book a free 15-min call <Icon name="arrow" /></a>
+					<a class="lp-text-link" href="#enquire">Or send a message</a>
+				</div>
+			</div>
+			<figure class="lp-intro" aria-label="A quick hello from Jake">
+				<div class="lp-intro-frame">
+					{#if introPlaying}
+						<!-- svelte-ignore a11y_media_has_caption (captions are burned into the video) -->
+						<video src={intro.src} poster={intro.poster} controls autoplay playsinline preload="auto"></video>
+					{:else}
+						<button type="button" class="lp-intro-play" onclick={() => (introPlaying = true)} aria-label="Play a 15-second hello from Jake (with captions)">
+							<img src={intro.poster} alt="" width="720" height="1280" loading="lazy" decoding="async" />
+							<span class="lp-intro-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28"><path d="M8 5.5v13l11-6.5z" fill="currentColor" /></svg></span>
+							<span class="lp-intro-len" aria-hidden="true">0:15</span>
+						</button>
+					{/if}
+				</div>
+			</figure>
+		</div>
+	</section>
+
+	<!-- Meet Jake -->
+	<section class="lp-section lp-meet" aria-labelledby="lp-meet-title">
+		<div class="container container-md lp-meet-inner">
+			<div class="lp-meet-head">
+				<img class="lp-portrait" src="/images/jake-ciminelli.jpg" alt="Jake Ciminelli, psychologist" width="160" height="160" loading="lazy" decoding="async" />
+				<div>
+					<p class="eyebrow">Meet your psychologist</p>
+					<h2 id="lp-meet-title">Hi, I'm Jake.</h2>
+				</div>
+			</div>
+			<div class="lp-meet-copy">
+				<p>
+					My approach is grounded in warmth and a deep respect for your unique story. Your goals, needs
+					and values guide our work together, and when you're ready, I'm here to walk alongside you.
+				</p>
+				<p>
+					I support people 15+ with anxiety, OCD (including Pure-O), depression, trauma, relationship
+					difficulties and life transitions. I use evidence-based approaches including Schema Therapy,
+					Cognitive Behavioural Therapy (CBT), Acceptance and Commitment Therapy (ACT) and Exposure and
+					Response Prevention (ERP), a first-line, evidence-based treatment for OCD.
+				</p>
+				<p class="lp-meet-quote">
+					You don't have to do this alone. Together we'll make sense of your story and help you move toward
+					calm, balance and self-trust.
+				</p>
+				<p>
+					My goal is to make these first, often difficult steps feel as safe and comfortable as possible. If
+					you're curious about working together, I'd love to connect and help you explore what genuine,
+					lasting change could look like for you.
+				</p>
+				<div class="lp-quals">
+					<p class="lp-quals-label">Qualifications</p>
+					<ul>
+						{#each training as t (t)}<li>{t}</li>{/each}
+					</ul>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -93,47 +181,17 @@
 		<div class="container container-lg">
 			<div class="lp-head">
 				<p class="eyebrow">How I help</p>
-				<h2 id="lp-help-title">Support for teens and adults with a wide range of concerns.</h2>
+				<h2 id="lp-help-title">Support for people 15+ with a wide range of concerns.</h2>
 			</div>
 			<ul class="lp-areas">
-				{#each clusters as c (c.slug)}
+				{#each helpAreas as a (a.key)}
 					<li>
-						<Mark shape={c.shape} tone={c.tone} />
-						<span class="lp-area-title">{c.title}</span>
-						<span class="lp-area-concerns">{c.concerns.map((x) => x.title).join(' · ')}</span>
+						<Mark shape={a.shape} tone={a.tone} />
+						<span class="lp-area-title">{a.title}</span>
+						<span class="lp-area-concerns">{a.concerns.join(' · ')}</span>
 					</li>
 				{/each}
 			</ul>
-		</div>
-	</section>
-
-	<!-- Meet Jake -->
-	<section class="lp-section lp-meet" aria-labelledby="lp-meet-title">
-		<div class="container container-lg lp-meet-grid">
-			<img class="lp-portrait" src="/images/jake-ciminelli.jpg" alt="Jake Ciminelli, psychologist" loading="lazy" />
-			<div class="lp-meet-copy">
-				<p class="eyebrow">Meet your psychologist</p>
-				<h2 id="lp-meet-title">Hi, I'm Jake.</h2>
-				<p>
-					My approach is grounded in warmth and a deep respect for your unique story. Your goals, needs
-					and values guide our work together, and when you're ready, I'm here to walk alongside you.
-				</p>
-				<p>
-					I use evidence-based approaches including Schema Therapy, Cognitive Behavioural Therapy (CBT),
-					Acceptance and Commitment Therapy (ACT) and Exposure and Response Prevention (ERP), a
-					first-line, evidence-based treatment for OCD.
-				</p>
-				<p>
-					My goal is to make these first steps feel as safe and comfortable as possible. If you're curious
-					about working together, I'd love to connect.
-				</p>
-				<div class="lp-quals">
-					<p class="lp-quals-label">Qualifications</p>
-					<ul>
-						{#each training as t (t)}<li>{t}</li>{/each}
-					</ul>
-				</div>
-			</div>
 		</div>
 	</section>
 
@@ -198,8 +256,8 @@
 					<p class="eyebrow">Send an enquiry</p>
 					<h2 id="lp-enquire-title">Not ready for a call? Send me a message.</h2>
 					<p>
-						Ask about fees, rebates, availability or whether I'm the right fit, and I'll reply by email within
-						48 hours. Or <a href={site.bookingLink}>book a free 15-minute call</a> instead.
+						Ask about fees, rebates, availability or whether I'm the right fit. I'll reply within 1 business
+						day. Or <a href={site.bookingLink}>book a free 15-minute call</a> instead.
 					</p>
 					<div id="crisis-support" class="surface-card notice flow">
 						<h3>Emergency and crisis support</h3>
@@ -277,4 +335,8 @@
 			</p>
 		</div>
 	</footer>
+
+	<div class="lp-sticky" class:is-visible={showSticky} aria-hidden={!showSticky} inert={!showSticky}>
+		<a class="btn primary md" href={site.bookingLink}>Book a free 15-min call <Icon name="arrow" /></a>
+	</div>
 </div>

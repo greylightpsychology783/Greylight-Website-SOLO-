@@ -53,7 +53,7 @@
 			</ul>
 			<div class="nav-actions">
 				<span class="nav-enquire-action"><a class="btn secondary sm" href="/contact">Enquire</a></span>
-				<a class="btn primary sm" href={site.bookingLink}>Book a Call</a>
+				<a class="btn primary sm" href={site.bookingLink}>Book a call</a>
 				<span class="nav-refer-action"><a class="btn light-blue sm" href={site.referralForm}>Refer</a></span>
 				<button
 					type="button"

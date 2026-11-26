@@ -14,7 +14,7 @@ const legacy: Record<string, string> = {
 };
 
 /** Landing pages for ad campaigns. Not linked from the site and not indexed. */
-const NOINDEX = ['/start'];
+const NOINDEX = ['/start', '/thank-you'];
 
 export const handle: Handle = async ({ event, resolve }) => {
 	const path = event.url.pathname.replace(/\/+$/, '').toLowerCase();

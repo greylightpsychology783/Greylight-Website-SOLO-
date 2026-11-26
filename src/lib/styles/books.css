@@ -24,7 +24,7 @@
 .pg-books .learning-list li { display:grid;grid-template-columns:auto 1fr;gap:var(--space-3);max-width:none;line-height:1.5 }
 .pg-books .learning-list svg { margin-top:.2em;color:var(--color-primary) }
 .pg-books .book-actions { display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6) }
-.pg-books .book-download { position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;min-height:var(--button-height);padding-inline:var(--space-5);border-radius:var(--radius-sm);background:var(--color-primary);color:var(--color-white);font-weight:var(--font-weight-semibold);text-decoration:none;text-transform:capitalize;transition:color var(--duration-base) var(--ease-standard),transform var(--duration-fast) var(--ease-standard) }
+.pg-books .book-download { position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;min-height:var(--button-height);padding-inline:var(--space-5);border-radius:var(--radius-sm);background:var(--color-primary);color:var(--color-white);font-weight:var(--font-weight-semibold);text-decoration:none;transition:color var(--duration-base) var(--ease-standard),transform var(--duration-fast) var(--ease-standard) }
 .pg-books .book-download:before { content:"";position:absolute;inset:0;z-index:-1;background:var(--color-primary-hover);transform:scaleX(0);transform-origin:right center;transition:transform var(--duration-base) var(--ease-standard) }
 .pg-books .book-download:hover { color:var(--color-white) }
 .pg-books .book-download:hover:before { transform:scaleX(1);transform-origin:left center }

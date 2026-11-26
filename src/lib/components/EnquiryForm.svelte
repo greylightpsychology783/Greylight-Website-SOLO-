@@ -2,7 +2,7 @@
 	import { enhance } from '$app/forms';
 	import UtmFields from './UtmFields.svelte';
 	import { site } from '#lib/data/site.ts';
-	import { trackMeta } from '#lib/track.ts';
+	import { markLeadPending } from '#lib/track.ts';
 
 	interface EnquiryState {
 		success?: boolean;
@@ -28,7 +28,7 @@
 	<div class="surface-card success-card flow" role="status">
 		<p class="eyebrow">Enquiry sent</p>
 		<h2>Thanks, your enquiry is on its way.</h2>
-		<p>I'll reply by email within 48 hours.</p>
+		<p>I'll reply within 1 business day.</p>
 	</div>
 {:else}
 	<form
@@ -40,10 +40,11 @@
 		use:enhance={() => {
 			submitting = true;
 			return async ({ result, update }) => {
+				// The landing page form redirects to /thank-you after sending, which counts the Meta "Lead"
+				// (event name only, no form contents). Flag it here so it only counts real enquiries.
+				if (result.type === 'redirect') markLeadPending();
 				await update({ reset: false });
 				submitting = false;
-				// Tell Meta an enquiry was sent (just the event — no form contents).
-				if (result.type === 'success' && result.data?.success) trackMeta('Lead');
 			};
 		}}
 	>

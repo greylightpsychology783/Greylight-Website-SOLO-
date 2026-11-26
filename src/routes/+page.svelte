@@ -235,7 +235,7 @@
 				</Accordion>
 				<Accordion question="Which issues do you work with?">
 					<p>
-						I work with people aged 15+ experiencing anxiety, OCD (including Pure-O), depression,
+						I work with adults and adolescents experiencing anxiety, OCD (including Pure-O), depression,
 						trauma, relationship concerns, self-esteem, and stress and life transitions. See <a href="/how-i-help">everything I help with</a>.
 					</p>
 				</Accordion>

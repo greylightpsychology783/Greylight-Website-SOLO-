@@ -108,7 +108,7 @@
 				<p class="lp-eyebrow">Telehealth anywhere in Australia · In person in Melbourne</p>
 				<h1 id="lp-title">Feeling stuck, overwhelmed or anxious? I'm glad you're here.</h1>
 				<p class="lp-lede">
-					I'm Jake, a clinical psychologist helping people 15+ with OCD (including Pure-O), anxiety, complex
+					I'm Jake, a clinical psychologist helping adults and adolescents with OCD (including Pure-O), anxiety, complex
 					trauma (CPTSD), men's issues and life changes. Sessions by secure telehealth from anywhere in
 					Australia, or in person in Camberwell, Richmond or Malvern.
 				</p>
@@ -155,7 +155,7 @@
 					and values guide our work together, and when you're ready, I'm here to walk alongside you.
 				</p>
 				<p>
-					I support people 15+ with anxiety, OCD (including Pure-O), depression, trauma, relationship
+					I support adults and adolescents with anxiety, OCD (including Pure-O), depression, trauma, relationship
 					difficulties and life transitions. I use evidence-based approaches including Schema Therapy,
 					Cognitive Behavioural Therapy (CBT), Acceptance and Commitment Therapy (ACT) and Exposure and
 					Response Prevention (ERP), a first-line, evidence-based treatment for OCD.
@@ -184,7 +184,7 @@
 		<div class="container container-lg">
 			<div class="lp-head">
 				<p class="eyebrow">How I help</p>
-				<h2 id="lp-help-title">Support for people 15+ with a wide range of concerns.</h2>
+				<h2 id="lp-help-title">Support for adults and adolescents with a wide range of concerns.</h2>
 			</div>
 			<ul class="lp-areas">
 				{#each helpAreas as a (a.key)}

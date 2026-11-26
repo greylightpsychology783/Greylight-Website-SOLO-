@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Seo from '#lib/components/Seo.svelte';
+	import Clarity from '#lib/components/Clarity.svelte';
 	import Icon from '#lib/components/Icon.svelte';
 	import Mark from '#lib/components/Mark.svelte';
 	import Accordion from '#lib/components/Accordion.svelte';
@@ -89,6 +90,8 @@
 
 	const year = new Date().getFullYear();
 </script>
+
+<Clarity />
 
 <Seo
 	title=""
@@ -331,7 +334,7 @@
 			</p>
 			<p>
 				In an emergency call <strong>000</strong>. Lifeline <strong>13 11 14</strong>. ·
-				<a href="/privacy">Privacy policy</a> · <a href="mailto:{site.email}">{site.email}</a>
+				<a href="/privacy" data-sveltekit-reload>Privacy policy</a> · <a href="mailto:{site.email}">{site.email}</a>
 			</p>
 		</div>
 	</footer>

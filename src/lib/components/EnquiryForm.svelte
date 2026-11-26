@@ -32,6 +32,7 @@
 	</div>
 {:else}
 	<form
+		data-clarity-mask="True"
 		class="surface-card form flow"
 		style="--flow-space: var(--space-4);"
 		method="post"

@@ -31,7 +31,7 @@
  * The video sits on a small "bento" of brand shapes (from the homepage hero). The shapes live entirely inside the
  * figure's own padding box, peeking out around the video's edges, so they can never cover the text beside it.
  */
-.pg-landing .lp-intro { position:relative;isolation:isolate;margin:0;justify-self:center;max-width:100%;padding:clamp(1.25rem,3vw,2.25rem) clamp(1.75rem,4vw,3rem) }
+.pg-landing .lp-intro { position:relative;isolation:isolate;margin:0;justify-self:center;max-width:100%;--pad-y:clamp(1.25rem,3vw,2.25rem);--pad-x:clamp(1.75rem,4vw,3rem);padding:var(--pad-y) var(--pad-x) }
 .pg-landing .lp-intro::before,.pg-landing .lp-intro::after,.pg-landing .lp-intro-accent,.pg-landing .lp-intro-dot { content:"";position:absolute;z-index:-1;aspect-ratio:1;pointer-events:none }
 /* Balanced diagonal: big sand card behind (lower right) and soft-blue circle (upper left), small navy and terracotta accents on the other corners */
 /* sand card offset behind the video, with the homepage bento's big curved corner */
@@ -39,9 +39,9 @@
 /* soft-blue circle, upper left */
 .pg-landing .lp-intro::after { left:0;top:0;width:44%;background:var(--color-blue-100);border-radius:50% }
 /* small navy circle, upper right, sitting just above the sand card */
-.pg-landing .lp-intro-accent { right:5%;top:7%;width:16%;background:var(--color-brand-ink);border-radius:50% }
+.pg-landing .lp-intro-accent { width:calc(var(--pad-x) * .72);right:calc(var(--pad-x) * .14);top:calc(var(--pad-y) + 8%);background:var(--color-brand-ink);border-radius:50% }
 /* terracotta dot, lower left */
-.pg-landing .lp-intro-dot { left:8%;bottom:9%;width:10%;background:var(--color-terracotta-100);border-radius:50% }
+.pg-landing .lp-intro-dot { width:calc(var(--pad-x) * .56);left:calc(var(--pad-x) * .22);bottom:calc(var(--pad-y) + 10%);background:var(--color-terracotta-100);border-radius:50% }
 .pg-landing .lp-intro-frame { position:relative;width:18rem;max-width:100%;aspect-ratio:9/16;border-radius:var(--radius-lg);overflow:hidden;background:var(--color-brand-ink);box-shadow:0 18px 44px rgb(20 27 33 / 22%);border:3px solid var(--color-white) }
 .pg-landing .lp-intro-frame video,.pg-landing .lp-intro-play,.pg-landing .lp-intro-play img { display:block;width:100%;height:100% }
 .pg-landing .lp-intro-frame video { object-fit:cover;background:#000 }

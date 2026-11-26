@@ -143,7 +143,7 @@
 	<section class="lp-section lp-meet" aria-labelledby="lp-meet-title">
 		<div class="container container-md lp-meet-inner">
 			<div class="lp-meet-head">
-				<img class="lp-portrait" src="/images/jake-ciminelli.jpg" alt="Jake Ciminelli, psychologist" width="160" height="160" loading="lazy" decoding="async" />
+				<img class="lp-portrait" src="/images/jake-ciminelli-sm.jpg" alt="Jake Ciminelli, psychologist" width="160" height="160" loading="lazy" decoding="async" />
 				<div>
 					<p class="eyebrow">Meet your psychologist</p>
 					<h2 id="lp-meet-title">Hi, I'm Jake.</h2>

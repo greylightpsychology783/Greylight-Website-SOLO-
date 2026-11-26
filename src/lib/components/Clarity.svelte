@@ -5,10 +5,12 @@
 	The project ID is public (it's in every page that loads the tag), so it isn't a secret.
 -->
 <script lang="ts">
+	import { dev } from '$app/environment';
 	const CLARITY_ID = 'zjfxs41het';
 	const tag = `<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "${CLARITY_ID}");</` + `script>`;
 </script>
 
+<!-- Only on the built site, so local development and testing don't create sessions in Clarity. -->
 <svelte:head>
-	{@html tag}
+	{#if !dev}{@html tag}{/if}
 </svelte:head>

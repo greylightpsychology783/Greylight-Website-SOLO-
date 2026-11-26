@@ -5,6 +5,7 @@
 .pg-landing .lp-section { padding-block:clamp(var(--space-12),7vw,var(--space-20)) }
 .pg-landing .lp-head { max-width:44rem;margin-bottom:clamp(var(--space-8),4vw,var(--space-12)) }
 .pg-landing .lp-head--center { margin-inline:auto;text-align:center }
+.pg-landing .lp-head--center > * { margin-inline:auto }
 
 /* Hero */
 /* Light, on-brand hero like the homepage: warm wash on pale slate, dark text, brand shapes framing the video */
